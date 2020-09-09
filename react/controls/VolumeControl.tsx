@@ -1,34 +1,32 @@
 import React, { useState, FunctionComponent } from 'react'
 import { Icon } from 'vtex.store-icons'
-import { useCssHandles } from 'vtex.css-handles'
 
 import styles from '../styles/styles.css'
-
-const CSS_HANDLES = ['volumeContainer', 'volumeSlider', 'volumeButton']
 
 export interface VolumeControlProps {
   setVolume: (volume: number) => void
   toggleMute: () => void
   isMuted: boolean | null
+  cssHandles: any
 }
 
 const VolumeControl: FunctionComponent<VolumeControlProps> = ({
   setVolume,
   toggleMute,
   isMuted,
+  cssHandles,
 }) => {
   const [showVolumeSlider, setShowVolumeSlider] = useState(false)
-  const handles = useCssHandles(CSS_HANDLES)
 
   return (
     <div
-      className={`${handles.volumeContainer} dib absolute bottom-2 right-2`}
+      className={`${cssHandles.volumeContainer} dib absolute bottom-2 right-2`}
       onMouseEnter={() => setShowVolumeSlider(true)}
       onMouseLeave={() => setShowVolumeSlider(false)}
     >
       {showVolumeSlider && (
         <input
-          className={`${handles.volumeSlider} ${styles.trackBar} ${styles.volumeSlider} v-mid`}
+          className={`${cssHandles.volumeSlider} ${styles.trackBar} ${styles.volumeSlider} v-mid`}
           disabled={isMuted === true}
           type="range"
           min={0}
@@ -41,7 +39,7 @@ const VolumeControl: FunctionComponent<VolumeControlProps> = ({
 
       <button
         onClick={() => toggleMute()}
-        className={`${handles.volumeButton} ${styles.button} v-mid ml4`}
+        className={`${cssHandles.volumeButton} ${styles.button} v-mid ml4`}
       >
         <Icon id={isMuted ? 'volume-muted' : 'volume-up'} />
       </button>

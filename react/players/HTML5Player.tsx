@@ -10,7 +10,19 @@ import PlayButton from '../controls/PlayButton'
 import FullscreenButton from '../controls/FullscreenButton'
 import { VideoPlayer } from '../interfaces'
 
-const CSS_HANDLES = ['videoContainer', 'videoElement', 'controlsContainer']
+const CSS_HANDLES = [
+  'videoContainer',
+  'videoElement',
+  'controlsContainer',
+  'playButton',
+  'trackContainer',
+  'trackTimer',
+  'trackBar',
+  'fullscreenButton',
+  'volumeContainer',
+  'volumeSlider',
+  'volumeButton',
+]
 
 const FALLBACK_IMAGE_URL =
   'https://storecomponents.vtexassets.com/arquivos/ids/155639'
@@ -94,10 +106,23 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
           className={`${handles.controlsContainer} ${styles.controlsContainer} absolute left-2 right-2 lh-copy`}
         >
           <>
-            <PlayButton isPlaying={isPlaying} play={play} pause={pause} />
-            <TrackControl videoRef={videoRef} changeState={changeState} />
-            <FullscreenButton toggleFullscreenMode={toggleFullscreenMode} />
+            <PlayButton
+              cssHandles={handles}
+              isPlaying={isPlaying}
+              play={play}
+              pause={pause}
+            />
+            <TrackControl
+              cssHandles={handles}
+              videoRef={videoRef}
+              changeState={changeState}
+            />
+            <FullscreenButton
+              cssHandles={handles}
+              toggleFullscreenMode={toggleFullscreenMode}
+            />
             <VolumeControl
+              cssHandles={handles}
               setVolume={setVolume}
               toggleMute={toggleMute}
               isMuted={isMuted}
