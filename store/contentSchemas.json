@@ -1,0 +1,36 @@
+{
+  "definitions": {
+    "Video": {
+      "properties": {
+        "src": {
+          "title": "admin/editor.video.src.title",
+          "$ref": "app:vtex.native-types#/definitions/url",
+          "default": ""
+        },
+        "width": {
+          "title": "admin/editor.video.width.title",
+          "$ref": "app:vtex.native-types#/definitions/text",
+          "default": ""
+        },
+        "height": {
+          "title": "admin/editor.video.height.title",
+          "$ref": "app:vtex.native-types#/definitions/text",
+          "default": ""
+        },
+        "autoPlay": {
+          "title": "admin/editor.video.autoPlay.title",
+          "default": true,
+          "type": "boolean"
+        },
+        "poster": {
+          "title": "admin/editor.video.poster.title",
+          "$ref": "app:vtex.native-types#/definitions/url",
+          "default": "",
+          "widget": {
+            "ui:widget": "image-uploader"
+          }
+        }
+      }
+    }
+  }
+}

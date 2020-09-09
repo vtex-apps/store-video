@@ -1,0 +1,14 @@
+{
+  "admin/editor.video.title": "Video",
+  "admin/editor.video.src.title": "URL",
+  "admin/editor.video.width.title": "Largura",
+  "admin/editor.video.height.title": "Altura",
+  "admin/editor.video.autoplay.title": "Reproduzir automaticamente",
+  "admin/editor.video.loop.title": "Reproduzir em loop",
+  "admin/editor.video.poster.title": "Poster URL",
+  "admin/editor.video.poster.description": "Imagem a ser exibida quando o video ainda não estiver disponível",
+  "admin/editor.video.name.title": "Nome",
+  "admin/editor.video.name.description": "Nome do video para SEO e acessibilidade",
+  "admin/editor.video.description.title": "Descrição",
+  "admin/editor.video.description.description": "Descrição do video para SEO e acessibilidade"
+}
