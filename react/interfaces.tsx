@@ -6,4 +6,10 @@ export interface VideoPlayer extends VideoHTMLAttributes<HTMLVideoElement> {
   src: string
   type?: string
   controlsType?: string
+  IconPlay?: any
+  IconPause?: any
+  IconFullscreen?: any
+  IconVolumeOn?: any
+  IconVolumeOff?: any
+  uploadDate?: string
 }

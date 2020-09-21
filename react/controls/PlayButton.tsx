@@ -1,27 +1,46 @@
 import React, { FunctionComponent } from 'react'
-import { Icon } from 'vtex.store-icons'
+import {
+  IconPlay as DefaultIconPlay,
+  IconPause as DefaultIconPause,
+} from 'vtex.store-icons'
 
 import styles from '../styles/styles.css'
 
 export interface PlayButtonProps {
   isPlaying: boolean | null
+  cssHandles: any
   play: () => void
   pause: () => void
-  cssHandles: any
+  IconPlay?: any
+  IconPause?: any
 }
 
 const PlayButton: FunctionComponent<PlayButtonProps> = ({
   isPlaying,
+  cssHandles,
+  IconPlay,
+  IconPause,
   play,
   pause,
-  cssHandles,
 }) => {
+  const PauseIcon = IconPause ? (
+    <IconPause />
+  ) : (
+    DefaultIconPause && <DefaultIconPause />
+  )
+
+  const PlayIcon = IconPlay ? (
+    <IconPlay />
+  ) : (
+    DefaultIconPlay && <DefaultIconPlay />
+  )
+
   return (
     <button
       className={`${cssHandles.playButton} ${styles.button} absolute bottom-2 left-0 v-mid z-1`}
       onClick={() => (isPlaying ? pause() : play())}
     >
-      <Icon id={isPlaying ? 'hpa-pause' : 'hpa-play'} />
+      {isPlaying ? PauseIcon : PlayIcon}
     </button>
   )
 }

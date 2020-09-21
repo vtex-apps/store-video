@@ -5,6 +5,7 @@ import { VideoPlayer } from '../interfaces'
 
 const CSS_HANDLES = ['videoContainer', 'videoElement'] as const
 
+// https://regex101.com/r/wdKKHO/1
 const VIMEO_REGEX = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/
 
 const VimeoPlayer: FunctionComponent<VideoPlayer> = ({
@@ -16,16 +17,9 @@ const VimeoPlayer: FunctionComponent<VideoPlayer> = ({
   description,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
-
-  const getParams = () => {
-    return `autoplay=${autoPlay}&loop=${loop}&enablejsapi=1&iv_load_policy=3&modestbranding=1`
-  }
-
-  const extractVideoID = () => {
-    const matchedSrc = src.match(VIMEO_REGEX)
-
-    return matchedSrc?.[5]
-  }
+  const params = `autoplay=${autoPlay}&loop=${loop}&enablejsapi=1&iv_load_policy=3&modestbranding=1`
+  const matchedSrc = src.match(VIMEO_REGEX)
+  const videoId = matchedSrc?.[5]
 
   return (
     <div className={`relative ${handles.videoContainer}`}>
@@ -35,7 +29,7 @@ const VimeoPlayer: FunctionComponent<VideoPlayer> = ({
         height={height}
         title={description}
         className={`${handles.videoElement}`}
-        src={`https://player.vimeo.com/video/${extractVideoID()}?${getParams()}`}
+        src={`https://player.vimeo.com/video/${videoId}?${params}`}
         frameBorder="0"
         allowFullScreen
         allow="autoplay"

@@ -6,11 +6,11 @@ import HTML5Player from './players/HTML5Player'
 import YoutubePlayer from './players/YoutubePlayer'
 
 const Video: StorefrontFunctionComponent<VideoPlayer> = (props) => {
-  const { src, name, description } = props
+  const { src, name, description, poster, uploadDate } = props
   const isVimeo = /vimeo/.test(src)
   const isYoutube = /youtube|youtu.be/.test(src)
 
-  const renderStructuredData = () => {
+  const StructuredData = () => {
     return (
       <script
         type="application/ld+json"
@@ -18,75 +18,37 @@ const Video: StorefrontFunctionComponent<VideoPlayer> = (props) => {
           __html: `{
           "@context": "http://schema.org",
           "@type": "VideoObject",
-          "name": ${name},
-          "description": ${description},
-          "contentUrl": ${src}
+          "name": "${name}",
+          "description": "${description}",
+          "contentUrl": "${src}",
+          "uploadDate": ${uploadDate ? new Date(uploadDate) : undefined},
+          "thumbnailUrl": "${poster ?? src}",
         }`,
         }}
       />
     )
   }
 
-  const renderPlayer = () => {
-    if (isVimeo) {
-      return <VimeoPlayer {...props} />
-    }
+  let Player = HTML5Player
 
-    if (isYoutube) {
-      return <YoutubePlayer {...props} />
-    }
+  if (isVimeo) {
+    Player = VimeoPlayer
+  }
 
-    return <HTML5Player {...props} />
+  if (isYoutube) {
+    Player = YoutubePlayer
   }
 
   return (
     <>
-      {renderStructuredData()}
-      {renderPlayer()}
+      <StructuredData />
+      <Player {...props} />
     </>
   )
 }
 
 Video.schema = {
   title: 'admin/editor.video.title',
-  type: 'object',
-  properties: {
-    name: {
-      title: 'admin/editor.video.name.title',
-      description: 'admin/editor.video.name.description',
-      type: 'string',
-    },
-    description: {
-      title: 'admin/editor.video.description.title',
-      description: 'admin/editor.video.description.description',
-      type: 'string',
-    },
-    width: {
-      title: 'admin/editor.video.width.title',
-      type: 'string',
-    },
-    height: {
-      title: 'admin/editor.video.height.title',
-      type: 'string',
-    },
-    src: {
-      title: 'admin/editor.video.src.title',
-      type: 'string',
-    },
-    autoPlay: {
-      title: 'admin/editor.video.autoplay.title',
-      type: 'boolean',
-    },
-    loop: {
-      title: 'admin/editor.video.loop.title',
-      type: 'boolean',
-    },
-    poster: {
-      title: 'admin/editor.video.poster.title',
-      description: 'admin/editor.video.poster.description',
-      type: 'string',
-    },
-  },
 }
 
 export default Video

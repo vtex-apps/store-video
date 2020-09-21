@@ -1,7 +1,7 @@
 import React, { RefObject, useRef, FunctionComponent, ChangeEvent } from 'react'
 
 import styles from '../styles/styles.css'
-import useVideoTrack from '../useVideoTrack'
+import useVideoTrack, { formatTime } from '../useVideoTrack'
 
 export interface TrackControlProps {
   videoRef: RefObject<HTMLVideoElement>
@@ -15,7 +15,7 @@ const TrackControl: FunctionComponent<TrackControlProps> = ({
   cssHandles,
 }) => {
   const trackBarRef = useRef<HTMLInputElement>(null)
-  const { duration, currentTime, setCurrentTime, formatTime } = useVideoTrack(
+  const { duration, currentTime, setCurrentTime } = useVideoTrack(
     videoRef,
     trackBarRef
   )
@@ -34,18 +34,16 @@ const TrackControl: FunctionComponent<TrackControlProps> = ({
     <div
       className={`${cssHandles.trackContainer} w-100 absolute bottom-1 lh-title`}
     >
-      {currentTime && duration && (
+      {currentTime && duration ? (
         <span className={`${cssHandles.trackTimer} ml7 white v-mid`}>
-          {formatTime(currentTime)} / {formatTime(duration)}
+          {`${formatTime(currentTime)} / ${formatTime(duration)}`}
         </span>
-      )}
+      ) : null}
 
       <input
         ref={trackBarRef}
-        onChange={(event) => {
-          handleChange(event)
-        }}
-        className={`${cssHandles.trackBar} ${styles.trackBar} w-100 seekbar v-mid`}
+        onChange={handleChange}
+        className={`${cssHandles.trackBar} ${styles.trackBar} w-100 v-mid`}
         type="range"
         min={0}
         step={0.05}

@@ -5,10 +5,12 @@
   "admin/editor.video.height.title": "Height",
   "admin/editor.video.autoplay.title": "Play automatically",
   "admin/editor.video.loop.title": "Play in loop",
-  "admin/editor.video.poster.title": "Poster URL",
+  "admin/editor.video.poster.title": "Thumbnail image URL",
   "admin/editor.video.poster.description": "Image to be displayed when video is not available yet",
   "admin/editor.video.name.title": "Name",
   "admin/editor.video.name.description": "Video name for SEO and accessibility",
   "admin/editor.video.description.title": "Description",
-  "admin/editor.video.description.description": "Video resume for SEO and accessibility "
+  "admin/editor.video.description.description": "Video resume for SEO and accessibility",
+  "admin/editor.video.uploadDate.title": "Upload date",
+  "admin/editor.video.uploadDate.description": "Video upload date for SEO, in the format `yyy-mm-dd hh:mm:ss`"
 }

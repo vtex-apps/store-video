@@ -1,10 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { RefObject, useState, useEffect } from 'react'
 
 interface State {
   isMuted: boolean | null
   isPlaying: boolean | null
   networkStatus: string | null
+  volume: number | undefined
 }
 
 const useVideo = (
@@ -16,6 +16,7 @@ const useVideo = (
   const [state, setState] = useState<State>({
     isMuted: null,
     isPlaying: null,
+    volume: undefined,
     networkStatus: null,
   })
 
@@ -37,6 +38,8 @@ const useVideo = (
     if (volume < 0 || volume > 1) return
 
     currentVideoRef.volume = volume
+
+    setState({ ...state, volume })
   }
 
   const toggleMute = () => {
@@ -74,21 +77,31 @@ const useVideo = (
     return NETWORK_STATUS[currentVideoRef?.networkState]
   }
 
+  const handleEnd = () => {
+    setState({ ...state, isPlaying: false })
+  }
+
   useEffect(() => {
-    return setState({
+    currentVideoRef?.addEventListener('ended', handleEnd)
+
+    setState({
       ...state,
       isMuted: currentVideoRef?.muted === true,
       isPlaying: currentVideoRef?.paused === false,
       networkStatus: getNetworkStatus(),
     })
+
+    return () => {
+      currentVideoRef?.removeEventListener('ended', handleEnd)
+    }
   }, [currentVideoRef])
 
   return {
     isPlaying: state?.isPlaying,
     isMuted: state?.isMuted,
-    hasEnded: currentVideoRef?.ended,
-    volume: currentVideoRef?.volume,
+    volume: state?.volume,
     networkStatus: state?.networkStatus,
+    hasEnded: currentVideoRef?.ended,
     play,
     pause,
     setVolume,

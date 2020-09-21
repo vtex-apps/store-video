@@ -5,6 +5,7 @@ import { VideoPlayer } from '../interfaces'
 
 const CSS_HANDLES = ['videoContainer', 'videoElement'] as const
 
+// https://regex101.com/r/CWmgOb/1
 const YOUTUBE_REGEX = /(?:youtube(?:-nocookie)?\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
 
 const YoutubePlayer: FunctionComponent<VideoPlayer> = ({
@@ -16,16 +17,9 @@ const YoutubePlayer: FunctionComponent<VideoPlayer> = ({
   description,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
-
-  const getParams = () => {
-    return `autoplay=${autoPlay}&loop=${loop}&enablejsapi=1&iv_load_policy=3&modestbranding=1`
-  }
-
-  const extractVideoID = () => {
-    const matchedSrc = src.match(YOUTUBE_REGEX)
-
-    return matchedSrc?.[1]
-  }
+  const params = `autoplay=${autoPlay}&loop=${loop}&enablejsapi=1&iv_load_policy=3&modestbranding=1`
+  const matchedSrc = src.match(YOUTUBE_REGEX)
+  const videoId = matchedSrc?.[1]
 
   return (
     <div className={`relative ${handles.videoContainer}`}>
@@ -35,7 +29,7 @@ const YoutubePlayer: FunctionComponent<VideoPlayer> = ({
         height={height}
         title={description}
         className={`${handles.videoElement}`}
-        src={`https://www.youtube.com/embed/${extractVideoID()}?${getParams()}`}
+        src={`https://www.youtube.com/embed/${videoId}?${params}`}
         frameBorder="0"
         allowFullScreen
         allow="autoplay"

@@ -5,10 +5,12 @@
   "admin/editor.video.height.title": "Altura",
   "admin/editor.video.autoplay.title": "Reproduzir automaticamente",
   "admin/editor.video.loop.title": "Reproduzir em loop",
-  "admin/editor.video.poster.title": "Poster URL",
+  "admin/editor.video.poster.title": "URL da imagem de thumbnail",
   "admin/editor.video.poster.description": "Imagem a ser exibida quando o video ainda não estiver disponível",
   "admin/editor.video.name.title": "Nome",
   "admin/editor.video.name.description": "Nome do video para SEO e acessibilidade",
   "admin/editor.video.description.title": "Descrição",
-  "admin/editor.video.description.description": "Descrição do video para SEO e acessibilidade"
+  "admin/editor.video.description.description": "Descrição do video para SEO e acessibilidade",
+  "admin/editor.video.uploadDate.title": "Data de upload",
+  "admin/editor.video.uploadDate.description": "Data de upload do video para SEO, no formato `aaaa-mm-dd hh:mm:ss`"
 }

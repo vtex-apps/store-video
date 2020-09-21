@@ -1,4 +1,3 @@
-/* eslint-disable jest/expect-expect */
 import React, { RefObject } from 'react'
 import { renderHook, render } from '@vtex/test-tools/react'
 import { act } from 'react-test-renderer'
@@ -28,7 +27,7 @@ describe('Video rendering', () => {
     expect(queryByTestId('youtube-player')).not.toBeInTheDocument()
   })
 
-  it('should have custom controls if controlsType is `native`', () => {
+  it('should have native controls if controlsType is `native`', () => {
     const { queryByTestId } = render(
       <Video controlsType="native" src="vtex.mp4" />
     )
@@ -37,7 +36,7 @@ describe('Video rendering', () => {
     expect(queryByTestId('controls-container')).not.toBeInTheDocument()
   })
 
-  it('should have native controls if controlsType is `vtex`', () => {
+  it('should have custom controls if controlsType is `vtex`', () => {
     const { queryByTestId } = render(
       <Video controlsType="custom-vtex" src="vtex.mp4" />
     )

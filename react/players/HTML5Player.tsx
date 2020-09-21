@@ -3,16 +3,18 @@ import React, { useRef } from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
 import useVideo from '../useVideo'
-import TrackControl from '../controls/TrackControl'
 import styles from '../styles/styles.css'
-import VolumeControl from '../controls/VolumeControl'
+import { VideoPlayer } from '../interfaces'
 import PlayButton from '../controls/PlayButton'
 import FullscreenButton from '../controls/FullscreenButton'
-import { VideoPlayer } from '../interfaces'
+import TrackControl from '../controls/TrackControl'
+import VolumeControl from '../controls/VolumeControl'
 
 const CSS_HANDLES = [
   'videoContainer',
   'videoElement',
+  'fallbackContainer',
+  'fallbackImage',
   'controlsContainer',
   'playButton',
   'trackContainer',
@@ -38,6 +40,11 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
   controlsType,
   description,
   muted,
+  IconPlay,
+  IconPause,
+  IconFullscreen,
+  IconVolumeOn,
+  IconVolumeOff,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -46,6 +53,7 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
     isPlaying,
     isMuted,
     networkStatus,
+    volume,
     play,
     pause,
     setVolume,
@@ -59,9 +67,9 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
 
   const renderFallback = () => {
     return (
-      <div className="fallback">
+      <div className={`${handles.fallbackContainer}`}>
         <img
-          className="w-100 h-100"
+          className={`w-100 h-100 ${handles.fallbackImage}`}
           src={FALLBACK_IMAGE_URL}
           alt={description}
         />
@@ -80,11 +88,6 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
       style={{ width, height }}
       className={`relative ${handles.videoContainer} ba b--gray`}
     >
-      {/* {networkStatus !== 'NETWORK_READY' && (
-        <div className="absolute w-100 h-100 flex items-center justify-center bg-black-90 tc">
-          <Spinner />
-        </div>
-      )} */}
       <video
         ref={videoRef}
         data-testid="html5-player"
@@ -93,7 +96,7 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
         loop={loop}
         autoPlay={autoPlay}
         controls={hasNativeControls}
-        muted={muted}
+        muted={autoPlay ? true : muted}
       >
         <source src={src} type={type && `video/${type}`} />
 
@@ -109,6 +112,8 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
             <PlayButton
               cssHandles={handles}
               isPlaying={isPlaying}
+              IconPlay={IconPlay}
+              IconPause={IconPause}
               play={play}
               pause={pause}
             />
@@ -118,14 +123,18 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
               changeState={changeState}
             />
             <FullscreenButton
+              IconFullscreen={IconFullscreen}
               cssHandles={handles}
               toggleFullscreenMode={toggleFullscreenMode}
             />
             <VolumeControl
+              IconVolumeOn={IconVolumeOn}
+              IconVolumeOff={IconVolumeOff}
               cssHandles={handles}
+              isMuted={isMuted}
+              volume={volume}
               setVolume={setVolume}
               toggleMute={toggleMute}
-              isMuted={isMuted}
             />
           </>
         </div>
