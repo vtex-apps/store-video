@@ -20,7 +20,7 @@ The `video` is a VTEX block that allows to add videos in the store
 
 ```diff
  "dependencies ": {
-+  "vtex.store-video": "0.x"
++  "vtex.store-video": "1.x"
  }
 ```
 
