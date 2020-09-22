@@ -67,21 +67,21 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 
 | CSS Handles         |
 | ------------------- |
-| `videoContainer`    |
-| `videoElement`      |
+| `controlsContainer` |
 | `fallbackContainer` |
 | `fallbackImage`     |
-| `controlsContainer` |
 | `fullscreenButton`  |
 | `playButton`        |
+| `trackBar`          |
 | `trackContainer`    |
 | `trackTimer`        |
-| `trackBar`          |
+| `videoContainer`    |
+| `videoElement`      |
 | `volumeContainer`   |
-| `volumeSlider`      |
 | `volumeButton`      |
+| `volumeSlider`      |
 
-:warning: *It's required that `controlsType` property has the `vtex` value in order to the following CSS Handles works: `controlsContainer`, `fullscreenButton`, `playButton`, `trackContainer`, `trackTimer`, `trackBar`, `volumeContainer`, `volumeSlider`, `volumeButton`.*
+:warning: *It's required that `controlsType` prop is set as `custom-vtex` in order to have the following CSS Handles properly working: `controlsContainer`, `fullscreenButton`, `playButton`, `trackContainer`, `trackTimer`, `trackBar`, `volumeContainer`, `volumeSlider`, and `volumeButton`.*
 
 <!-- DOCS-IGNORE:start -->
 
