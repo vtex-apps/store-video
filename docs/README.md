@@ -10,13 +10,13 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- DOCS-IGNORE:end -->
 
-The `video` is a VTEX block that allows adding videos in a store
+The Video app allows you to display video assets on your store pages.
 
 ![Media Placeholder](https://storecomponents.vtexassets.com/arquivos/ids/155640)
 
 ## Configuration
 
-1. Add the `store-video` app to your theme's dependencies in the `manifest.json`, for example:
+1. Add the `store-video` app to your theme's dependencies in the `manifest.json` file:
 
 ```diff
  "dependencies ": {
@@ -24,7 +24,7 @@ The `video` is a VTEX block that allows adding videos in a store
  }
 ```
 
-2. In any desired theme template, add the `video` block, passing the desirable and required props. For example:
+2. In any desired theme template, add the `video` block with the desirable props. For example:
 
 ```json
   "video#background": {
@@ -68,23 +68,23 @@ Use the **admin's Site Editor** to manage some props declared in the `video` blo
 
 In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
 
-⚠️ It's required that `controlsType` property has the `vtex` value in order to the following CSS Handles works: `controlsContainer`, `fullscreenButton`, `playButton`, `trackContainer`, `trackTimer`, `trackBar`, `volumeContainer`, `volumeSlider`, `volumeButton`
-
 | CSS Handles         |
 | ------------------- |
-| `videoContainer`    |
-| `videoElement`      |
+| `controlsContainer` |
 | `fallbackContainer` |
 | `fallbackImage`     |
-| `controlsContainer` |
 | `fullscreenButton`  |
 | `playButton`        |
+| `trackBar`          |
 | `trackContainer`    |
 | `trackTimer`        |
-| `trackBar`          |
+| `videoContainer`    |
+| `videoElement`      |
 | `volumeContainer`   |
-| `volumeSlider`      |
 | `volumeButton`      |
+| `volumeSlider`      |
+
+:warning: _It's required that `controlsType` prop is set as `custom-vtex` in order to have the following CSS Handles properly working: `controlsContainer`, `fullscreenButton`, `playButton`, `trackContainer`, `trackTimer`, `trackBar`, `volumeContainer`, `volumeSlider`, and `volumeButton`._
 
 <!-- DOCS-IGNORE:start -->
 
