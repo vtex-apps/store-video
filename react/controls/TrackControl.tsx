@@ -6,7 +6,7 @@ import useVideoTrack, { formatTime } from '../useVideoTrack'
 export interface TrackControlProps {
   videoRef: RefObject<HTMLVideoElement>
   changeState: (property: string, value: any) => void
-  cssHandles: any
+  cssHandles: Record<'trackContainer' | 'trackTimer' | 'trackBar', string>
 }
 
 const TrackControl: FunctionComponent<TrackControlProps> = ({
@@ -20,14 +20,12 @@ const TrackControl: FunctionComponent<TrackControlProps> = ({
     trackBarRef
   )
 
-  const handleChange = (event: ChangeEvent) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (videoRef?.current?.ended) {
       changeState('isPlaying', false)
     }
 
-    const target = event?.target as HTMLInputElement
-
-    setCurrentTime(parseFloat(target?.value))
+    setCurrentTime(parseFloat(event?.target?.value))
   }
 
   return (
@@ -48,7 +46,7 @@ const TrackControl: FunctionComponent<TrackControlProps> = ({
         min={0}
         step={0.05}
         defaultValue="0"
-        max={duration || undefined}
+        max={duration ?? undefined}
       />
     </div>
   )

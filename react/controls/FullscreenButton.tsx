@@ -5,8 +5,8 @@ import styles from '../styles/styles.css'
 
 export interface FullscreenButtonProps {
   toggleFullscreenMode: () => void
-  cssHandles: any
-  IconFullscreen?: any
+  cssHandles: Record<'fullscreenButton', string>
+  IconFullscreen?: React.FC<unknown>
 }
 
 const FullscreenButton: FunctionComponent<FullscreenButtonProps> = ({
@@ -19,11 +19,7 @@ const FullscreenButton: FunctionComponent<FullscreenButtonProps> = ({
       className={`${cssHandles.fullscreenButton} ${styles.button} ml4 absolute bottom-2 right-0`}
       onClick={toggleFullscreenMode}
     >
-      {IconFullscreen ? (
-        <IconFullscreen />
-      ) : (
-        DefaultIconFullscreen && <DefaultIconFullscreen />
-      )}
+      {IconFullscreen ? <IconFullscreen /> : <DefaultIconFullscreen />}
     </button>
   )
 }

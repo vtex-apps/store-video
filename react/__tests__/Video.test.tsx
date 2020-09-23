@@ -7,7 +7,7 @@ import useVideoTrack from '../useVideoTrack'
 import useVideo from '../useVideo'
 
 describe('Video rendering', () => {
-  // TODO: Handle loading state
+  it.todo('should show a loading when the network status is not ready')
 
   it('should render youtube player correctly', () => {
     const { queryByTestId } = render(
@@ -60,7 +60,7 @@ describe('Video logic', () => {
     containerRef = { current: container }
   })
 
-  it('should permit change the volume of the video', () => {
+  it('should change the volume of the video', () => {
     const {
       result: {
         current: { toggleMute, setVolume },
@@ -89,7 +89,7 @@ describe('Video logic', () => {
     expect(videoRef?.current?.volume).toBe(0.3)
   })
 
-  it('should permit pause the video', () => {
+  it('should pause the video', () => {
     jest.spyOn(window.HTMLMediaElement.prototype, 'pause').mockImplementation()
 
     Object.defineProperty(HTMLMediaElement.prototype, 'paused', {
@@ -113,7 +113,7 @@ describe('Video logic', () => {
     expect(current.isPlaying).toBeFalsy()
   })
 
-  it('should permit play the video', () => {
+  it('should play the video', () => {
     jest
       .spyOn(window.HTMLMediaElement.prototype, 'play')
       .mockImplementation(() => Promise.resolve())
@@ -141,7 +141,7 @@ describe('Video logic', () => {
     expect(current.isPlaying).toBeTruthy()
   })
 
-  it('should permit getting the track timer with the right format', () => {
+  it('should get the track timer with the right format', () => {
     const trackBar: HTMLInputElement = document.createElement('input')
     const trackBarRef = { current: trackBar }
 
@@ -157,7 +157,7 @@ describe('Video logic', () => {
     expect(formatTime(10300)).toBe('2:51:40')
   })
 
-  it('it should update current time when video is playing', () => {
+  it('should update the current time when video is playing', () => {
     const trackBar: HTMLInputElement = document.createElement('input')
     const trackBarRef = { current: trackBar }
 

@@ -28,8 +28,8 @@ export const useVideoTrack = (
   trackBarRef: RefObject<HTMLInputElement>
 ) => {
   const [state, setState] = useState<State>()
-  const currentVideoRef = videoRef?.current as any
-  const currentTrackBarRef = trackBarRef?.current as any
+  const currentVideoRef = videoRef?.current
+  const currentTrackBarRef = trackBarRef?.current
 
   const updateMetaData = () => {
     setState({ currentTime: 0, duration: currentVideoRef?.duration })
@@ -57,6 +57,7 @@ export const useVideoTrack = (
       currentVideoRef?.removeEventListener('loadedmetadata', updateMetaData)
       currentVideoRef?.removeEventListener('timeupdate', updateCurrentTime)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentVideoRef])
 
   return {

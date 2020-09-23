@@ -1,4 +1,4 @@
-📢 Use this project, [contribute](https://github.com/{OrganizationName}/store-video) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
+📢 Use this project, [contribute](https://github.com/vtex-apps/store-video) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
 
 # Video
 
@@ -10,7 +10,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- DOCS-IGNORE:end -->
 
-The `video` is a VTEX block that allows to add videos in the store
+The `video` is a VTEX block that allows adding videos in a store
 
 ![Media Placeholder](https://storecomponents.vtexassets.com/arquivos/ids/155640)
 
@@ -20,11 +20,11 @@ The `video` is a VTEX block that allows to add videos in the store
 
 ```diff
  "dependencies ": {
-+  "vtex.store-video": "0.x"
++  "vtex.store-video": "1.x"
  }
 ```
 
-2. In any desired theme template, add the `video` block, passing the desireble and required props. For example:
+2. In any desired theme template, add the `video` block, passing the desirable and required props. For example:
 
 ```json
   "video#background": {
@@ -44,13 +44,13 @@ The `video` is a VTEX block that allows to add videos in the store
 
 | Prop name        | Type                 | Description                                                                                                                                                                       | Default value     |
 | ---------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| `name`           | `string`             | Video name for SEO and accessibility purposes.                                                                                                                                    | `undefined`       |
-| `description`    | `string`             | Video resume for SEO and accessibility purposes.                                                                                                                                  | `undefined`       |
-| `src`            | `string`             | Video URL. It can be a `youtube` url, `vimeo` url or a self-hosted video url.                                                                                                     | `undefined`       |
+| `name`           | `string`             | Video name for SEO and accessibility.                                                                                                                                             | `undefined`       |
+| `description`    | `string`             | Video description for SEO and accessibility.                                                                                                                                      | `undefined`       |
+| `src`            | `string`             | Video URL. It can be a `youtube` URL, `vimeo` URL or a self-hosted video URL.                                                                                                     | `undefined`       |
 | `type`           | `string`             | Video type. ⚠️ This property only works if the video URL represents a HTML5 Player.                                                                                               | `undefined`       |
-| `poster`         | `string`             | Image URL to be displayed before the video playback, as a cover.                                                                                                                  | `undefined`       |
-| `controlsType`   | `string`             | The type of controls. It can be `custom-vtex`( custom controls ), `native` ( native controls ) or `none`. ⚠️ This property only works if the video URL represents a HTML5 Player. | `undefined`       |
-| `autoPlay`       | `boolean`            | Whether the video will start automatically after loaded(`true`) or not(`false`). Note that if the value is `true`, the muted property will need be `true` to works.               | `false`           |
+| `poster`         | `string`             | Cover image URL to be displayed before the video playback, as a cover.                                                                                                            | `undefined`       |
+| `controlsType`   | `enum`               | The type of controls. It can be `custom-vtex`( custom controls ), `native` ( native controls ) or `none`. ⚠️ This property only works if the video URL represents a HTML5 Player. | `undefined`       |
+| `autoPlay`       | `boolean`            | Whether the video will start automatically after loaded(`true`) or not(`false`). Note that if the value is `true`, the muted property will need to be `true`.                     | `false`           |
 | `muted`          | `boolean`            | Whether the video will start with the audio on(`false`) or not(`true`).                                                                                                           | `false`           |
 | `loop`           | `boolean`            | Whether the video will run in a loop(`true`) or not(`false`).                                                                                                                     | `false`           |
 | `width`          | `number` or `string` | The width of the video exhibition area. It could be as %(`string`) or pexels(`number`).                                                                                           | `undefined`       |

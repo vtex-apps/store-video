@@ -10,10 +10,13 @@ export interface VolumeControlProps {
   setVolume: (volume: number) => void
   toggleMute: React.MouseEventHandler<HTMLButtonElement>
   isMuted: boolean | null
-  cssHandles: any
-  IconVolumeOn?: any
-  IconVolumeOff?: any
+  cssHandles: Record<
+    'volumeContainer' | 'volumeButton' | 'volumeSlider',
+    string
+  >
   volume: number | undefined
+  IconVolumeOn?: React.FC<unknown>
+  IconVolumeOff?: React.FC<unknown>
 }
 
 const VolumeControl: FunctionComponent<VolumeControlProps> = ({

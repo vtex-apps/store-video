@@ -11,8 +11,8 @@ const useVideo = (
   videoRef: RefObject<HTMLVideoElement>,
   containerRef: RefObject<HTMLDivElement>
 ) => {
-  const currentVideoRef = videoRef?.current as any
-  const currentContainerRef = containerRef?.current as any
+  const currentVideoRef = videoRef?.current
+  const currentContainerRef = containerRef?.current
   const [state, setState] = useState<State>({
     isMuted: null,
     isPlaying: null,
@@ -74,7 +74,7 @@ const useVideo = (
       'NETWORK_NO_SOURCE',
     ]
 
-    return NETWORK_STATUS[currentVideoRef?.networkState]
+    return NETWORK_STATUS[currentVideoRef?.networkState ?? 0]
   }
 
   const handleEnd = () => {
@@ -94,7 +94,8 @@ const useVideo = (
     return () => {
       currentVideoRef?.removeEventListener('ended', handleEnd)
     }
-  }, [currentVideoRef])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return {
     isPlaying: state?.isPlaying,

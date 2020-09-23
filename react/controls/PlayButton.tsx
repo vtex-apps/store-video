@@ -8,11 +8,11 @@ import styles from '../styles/styles.css'
 
 export interface PlayButtonProps {
   isPlaying: boolean | null
-  cssHandles: any
+  cssHandles: Record<'playButton', string>
   play: () => void
   pause: () => void
-  IconPlay?: any
-  IconPause?: any
+  IconPlay?: React.FC<unknown>
+  IconPause?: React.FC<unknown>
 }
 
 const PlayButton: FunctionComponent<PlayButtonProps> = ({
