@@ -1,4 +1,4 @@
-import { VideoHTMLAttributes, ComponentType } from 'react'
+import { VideoHTMLAttributes } from 'react'
 
 export interface VideoPlayer extends VideoHTMLAttributes<HTMLVideoElement> {
   name?: string

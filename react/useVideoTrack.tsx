@@ -44,7 +44,7 @@ export const useVideoTrack = (
   }
 
   const setCurrentTime = (timeInSeconds: number) => {
-    if (!currentVideoRef && currentVideoRef !== 0) return
+    if (!currentVideoRef) return
 
     currentVideoRef.currentTime = timeInSeconds
   }
