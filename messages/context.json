@@ -12,5 +12,7 @@
   "admin/editor.video.description.title": "Description",
   "admin/editor.video.description.description": "Video resume for SEO and accessibility",
   "admin/editor.video.uploadDate.title": "Upload date",
-  "admin/editor.video.uploadDate.description": "Video upload date for SEO, in the format `yyy-mm-dd hh:mm:ss`"
+  "admin/editor.video.uploadDate.description": "Video upload date for SEO, in the format `yyy-mm-dd hh:mm:ss`",
+  "admin/editor.video.fallbackImageUrl.title": "Fallback Image URL",
+  "admin/editor.video.fallbackImageUrl.description": "Video fallback image URL to be displayed if the video is not available"
 }

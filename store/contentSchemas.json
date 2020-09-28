@@ -25,6 +25,11 @@
           "title": "admin/editor.video.src.title",
           "type": "string"
         },
+        "fallbackImageUrl": {
+          "title": "admin/editor.video.fallBackImageUrl.title",
+          "description": "admin/editor.video.fallbackImageUrl.description",
+          "type": "string"
+        },
         "autoPlay": {
           "title": "admin/editor.video.autoplay.title",
           "type": "boolean"

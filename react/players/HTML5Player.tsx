@@ -26,8 +26,23 @@ const CSS_HANDLES = [
   'volumeButton',
 ]
 
-const FALLBACK_IMAGE_URL =
-  'https://storecomponents.vtexassets.com/arquivos/ids/155639'
+interface FallbackImageProps {
+  imageUrl?: string,
+  description?: string
+}
+
+const FallbackImage: React.FC<FallbackImageProps> = ({ imageUrl = 'https://storecomponents.vtexassets.com/arquivos/ids/155639', description}) => {
+  const handles = useCssHandles(CSS_HANDLES)
+
+  return (
+    <div className={`${handles.fallbackContainer}`}>
+      <img
+        className={`w-100 h-100 ${handles.fallbackImage}`}
+        src={imageUrl}
+        alt={description}
+      />
+    </div>
+}
 
 const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
   src,
@@ -65,20 +80,8 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
   const hasCustomControls = controlsType === 'custom-vtex'
   const hasNativeControls = controlsType === 'native'
 
-  const renderFallback = () => {
-    return (
-      <div className={`${handles.fallbackContainer}`}>
-        <img
-          className={`w-100 h-100 ${handles.fallbackImage}`}
-          src={FALLBACK_IMAGE_URL}
-          alt={description}
-        />
-      </div>
-    )
-  }
-
   if (hasCustomControls && networkStatus === 'NETWORK_NO_SOURCE') {
-    return renderFallback()
+    return <FallbackImage imageUrl={poster} description={description} />
   }
 
   return (
@@ -100,7 +103,7 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
       >
         <source src={src} type={type && `video/${type}`} />
 
-        {renderFallback()}
+        {<FallbackImage imageUrl={poster} description={description} />}
       </video>
 
       {videoRef && hasCustomControls && (

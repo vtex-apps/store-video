@@ -4,6 +4,7 @@ export interface VideoPlayer extends VideoHTMLAttributes<HTMLVideoElement> {
   name?: string
   description?: string
   src: string
+  fallbackImageUrl?: string
   type?: string
   controlsType?: string
   IconPlay?: React.FC<unknown>
