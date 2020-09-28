@@ -57,6 +57,7 @@ export const useVideoTrack = (
       currentVideoRef?.removeEventListener('loadedmetadata', updateMetaData)
       currentVideoRef?.removeEventListener('timeupdate', updateCurrentTime)
     }
+    // Disabling because it is necessary to define some event listeners only when video ref is available
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentVideoRef])
 

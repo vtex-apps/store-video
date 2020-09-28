@@ -94,6 +94,7 @@ const useVideo = (
     return () => {
       currentVideoRef?.removeEventListener('ended', handleEnd)
     }
+    // Disabling because it is necessary to set some default values only when video ref is available
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

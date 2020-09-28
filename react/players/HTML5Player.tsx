@@ -27,11 +27,14 @@ const CSS_HANDLES = [
 ]
 
 interface FallbackImageProps {
-  imageUrl?: string,
+  imageUrl?: string
   description?: string
 }
 
-const FallbackImage: React.FC<FallbackImageProps> = ({ imageUrl = 'https://storecomponents.vtexassets.com/arquivos/ids/155639', description}) => {
+const FallbackImage: React.FC<FallbackImageProps> = ({
+  imageUrl = 'https://storecomponents.vtexassets.com/arquivos/ids/155639',
+  description,
+}) => {
   const handles = useCssHandles(CSS_HANDLES)
 
   return (
@@ -42,6 +45,7 @@ const FallbackImage: React.FC<FallbackImageProps> = ({ imageUrl = 'https://store
         alt={description}
       />
     </div>
+  )
 }
 
 const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({

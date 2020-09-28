@@ -25,18 +25,15 @@
           "title": "admin/editor.video.src.title",
           "type": "string"
         },
-        "fallbackImageUrl": {
-          "title": "admin/editor.video.fallBackImageUrl.title",
-          "description": "admin/editor.video.fallbackImageUrl.description",
-          "type": "string"
-        },
         "autoPlay": {
           "title": "admin/editor.video.autoplay.title",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "loop": {
           "title": "admin/editor.video.loop.title",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "poster": {
           "title": "admin/editor.video.poster.title",
