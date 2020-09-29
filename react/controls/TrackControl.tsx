@@ -32,11 +32,11 @@ const TrackControl: FunctionComponent<TrackControlProps> = ({
     <div
       className={`${cssHandles.trackContainer} w-100 absolute bottom-1 lh-title`}
     >
-      {currentTime && duration ? (
+      {currentTime != null && duration != null && (
         <span className={`${cssHandles.trackTimer} ml7 white v-mid`}>
           {`${formatTime(currentTime)} / ${formatTime(duration)}`}
         </span>
-      ) : null}
+      )}
 
       <input
         ref={trackBarRef}

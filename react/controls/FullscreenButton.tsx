@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import { IconExpand as DefaultIconFullscreen } from 'vtex.store-icons'
 
 import styles from '../styles/styles.css'
@@ -6,10 +6,10 @@ import styles from '../styles/styles.css'
 export interface FullscreenButtonProps {
   toggleFullscreenMode: () => void
   cssHandles: Record<'fullscreenButton', string>
-  IconFullscreen?: React.FC<unknown>
+  IconFullscreen?: FC<unknown>
 }
 
-const FullscreenButton: FunctionComponent<FullscreenButtonProps> = ({
+const FullscreenButton: FC<FullscreenButtonProps> = ({
   toggleFullscreenMode,
   cssHandles,
   IconFullscreen,

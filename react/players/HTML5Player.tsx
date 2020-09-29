@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React, { useRef } from 'react'
+import React, { useRef, FC } from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
 import useVideo from '../useVideo'
@@ -31,7 +31,7 @@ interface FallbackImageProps {
   description?: string
 }
 
-const FallbackImage: React.FC<FallbackImageProps> = ({
+const FallbackImage: FC<FallbackImageProps> = ({
   imageUrl = 'https://storecomponents.vtexassets.com/arquivos/ids/155639',
   description,
 }) => {

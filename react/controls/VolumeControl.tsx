@@ -1,4 +1,4 @@
-import React, { useState, FunctionComponent } from 'react'
+import React, { useState, FC, MouseEventHandler } from 'react'
 import {
   IconVolumeOff as DefaultIconVolumeOff,
   IconVolumeOn as DefaultIconVolumeOn,
@@ -8,18 +8,18 @@ import styles from '../styles/styles.css'
 
 export interface VolumeControlProps {
   setVolume: (volume: number) => void
-  toggleMute: React.MouseEventHandler<HTMLButtonElement>
+  toggleMute: MouseEventHandler<HTMLButtonElement>
   isMuted: boolean | null
   cssHandles: Record<
     'volumeContainer' | 'volumeButton' | 'volumeSlider',
     string
   >
   volume: number | undefined
-  IconVolumeOn?: React.FC<unknown>
-  IconVolumeOff?: React.FC<unknown>
+  IconVolumeOn?: FC<unknown>
+  IconVolumeOff?: FC<unknown>
 }
 
-const VolumeControl: FunctionComponent<VolumeControlProps> = ({
+const VolumeControl: FC<VolumeControlProps> = ({
   setVolume,
   toggleMute,
   isMuted,

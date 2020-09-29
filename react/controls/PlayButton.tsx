@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import {
   IconPlay as DefaultIconPlay,
   IconPause as DefaultIconPause,
@@ -11,11 +11,11 @@ export interface PlayButtonProps {
   cssHandles: Record<'playButton', string>
   play: () => void
   pause: () => void
-  IconPlay?: React.FC<unknown>
-  IconPause?: React.FC<unknown>
+  IconPlay?: FC<unknown>
+  IconPause?: FC<unknown>
 }
 
-const PlayButton: FunctionComponent<PlayButtonProps> = ({
+const PlayButton: FC<PlayButtonProps> = ({
   isPlaying,
   cssHandles,
   IconPlay,

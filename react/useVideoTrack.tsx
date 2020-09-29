@@ -13,7 +13,6 @@ export const formatTime = (timeInSeconds: number) => {
   }
 
   const minutes: number = Math.floor((timeInSeconds / 60) % 60)
-
   const hours: number = Math.floor(timeInSeconds / 3600)
 
   if (hours) {
@@ -27,7 +26,7 @@ export const useVideoTrack = (
   videoRef: RefObject<HTMLVideoElement>,
   trackBarRef: RefObject<HTMLInputElement>
 ) => {
-  const [state, setState] = useState<State>()
+  const [state, setState] = useState<State>({})
   const currentVideoRef = videoRef?.current
   const currentTrackBarRef = trackBarRef?.current
 
@@ -63,7 +62,7 @@ export const useVideoTrack = (
 
   return {
     duration: currentVideoRef?.duration,
-    currentTime: state?.currentTime,
+    currentTime: state.currentTime,
     setCurrentTime,
     formatTime,
   }

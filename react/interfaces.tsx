@@ -1,4 +1,4 @@
-import { VideoHTMLAttributes } from 'react'
+import { VideoHTMLAttributes, FC } from 'react'
 
 export interface VideoPlayer extends VideoHTMLAttributes<HTMLVideoElement> {
   name?: string
@@ -7,10 +7,10 @@ export interface VideoPlayer extends VideoHTMLAttributes<HTMLVideoElement> {
   fallbackImageUrl?: string
   type?: string
   controlsType?: string
-  IconPlay?: React.FC<unknown>
-  IconPause?: React.FC<unknown>
-  IconFullscreen?: React.FC<unknown>
-  IconVolumeOn?: React.FC<unknown>
-  IconVolumeOff?: React.FC<unknown>
+  IconPlay?: FC<unknown>
+  IconPause?: FC<unknown>
+  IconFullscreen?: FC<unknown>
+  IconVolumeOn?: FC<unknown>
+  IconVolumeOff?: FC<unknown>
   uploadDate?: string
 }

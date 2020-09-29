@@ -7,6 +7,13 @@ interface State {
   volume: number | undefined
 }
 
+const NETWORK_STATUS: string[] = [
+  'NETWORK_EMPTY',
+  'NETWORK_IDLE',
+  'NETWORK_LOADING',
+  'NETWORK_NO_SOURCE',
+]
+
 const useVideo = (
   videoRef: RefObject<HTMLVideoElement>,
   containerRef: RefObject<HTMLDivElement>
@@ -58,7 +65,7 @@ const useVideo = (
     return currentContainerRef?.requestFullscreen()
   }
 
-  const changeState = (property: string, value: any) => {
+  const changeState = (property: string, value: unknown) => {
     setState({ ...state, [property]: value })
   }
 
@@ -67,13 +74,6 @@ const useVideo = (
   }
 
   const getNetworkStatus = (): string => {
-    const NETWORK_STATUS: string[] = [
-      'NETWORK_EMPTY',
-      'NETWORK_IDLE',
-      'NETWORK_LOADING',
-      'NETWORK_NO_SOURCE',
-    ]
-
     return NETWORK_STATUS[currentVideoRef?.networkState ?? 0]
   }
 
@@ -99,10 +99,10 @@ const useVideo = (
   }, [])
 
   return {
-    isPlaying: state?.isPlaying,
-    isMuted: state?.isMuted,
-    volume: state?.volume,
-    networkStatus: state?.networkStatus,
+    isPlaying: state.isPlaying,
+    isMuted: state.isMuted,
+    volume: state.volume,
+    networkStatus: state.networkStatus,
     hasEnded: currentVideoRef?.ended,
     play,
     pause,

@@ -5,10 +5,13 @@ import VimeoPlayer from './players/VimeoPlayer'
 import HTML5Player from './players/HTML5Player'
 import YoutubePlayer from './players/YoutubePlayer'
 
+const VIMEO_PATTERN = /vimeo/
+const YOUTUBE_PATTERN = /youtube|youtu.be/
+
 const Video: StorefrontFunctionComponent<VideoPlayer> = (props) => {
   const { src, name, description, poster, uploadDate } = props
-  const isVimeo = /vimeo/.test(src)
-  const isYoutube = /youtube|youtu.be/.test(src)
+  const isVimeo = VIMEO_PATTERN.test(src)
+  const isYoutube = YOUTUBE_PATTERN.test(src)
 
   const StructuredData = () => {
     return (
