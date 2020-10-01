@@ -12,12 +12,16 @@ const YoutubePlayer: FunctionComponent<VideoPlayer> = ({
   width,
   height,
   autoPlay,
+  controlsType,
   loop,
   src,
   description,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
-  const params = `autoplay=${autoPlay}&loop=${loop}&enablejsapi=1&iv_load_policy=3&modestbranding=1`
+  const params = `autoplay=${autoPlay}&loop=${loop}&enablejsapi=1&iv_load_policy=3&modestbranding=1&rel=0&controls=${
+    controlsType === 'none' ? 0 : 1
+  }`
+
   const matchedSrc = src.match(YOUTUBE_REGEX)
   const videoId = matchedSrc?.[1]
 
