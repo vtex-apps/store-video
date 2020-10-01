@@ -46,7 +46,7 @@ const TrackControl: FunctionComponent<TrackControlProps> = ({
         min={0}
         step={0.05}
         defaultValue="0"
-        max={duration ?? undefined}
+        max={duration ?? 0}
       />
     </div>
   )
