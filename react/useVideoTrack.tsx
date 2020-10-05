@@ -8,7 +8,7 @@ interface State {
 export const formatTime = (timeInSeconds: number) => {
   let seconds: string = Math.floor(timeInSeconds % 60).toString()
 
-  if (seconds?.length === 1) {
+  if (seconds.length === 1) {
     seconds = `0${seconds}`
   }
 
