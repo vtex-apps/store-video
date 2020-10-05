@@ -89,7 +89,7 @@ const useVideo = (
     setState({
       ...state,
       isMuted: currentVideoRef?.muted === true,
-      isPlaying: currentVideoRef?.autoplay ?? currentVideoRef?.paused === false,
+      isPlaying: currentVideoRef?.autoplay || currentVideoRef?.paused === false,
       networkStatus: getNetworkStatus(),
     })
 
