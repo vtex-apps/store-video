@@ -1,0 +1,24 @@
+{
+  "vendor": "vtex",
+  "name": "store-video",
+  "version": "0.0.1",
+  "title": "Video",
+  "description": "Store component to handle video",
+  "builders": {
+    "react": "3.x",
+    "store": "0.x",
+    "messages": "1.x",
+    "docs": "0.x"
+  },
+  "dependencies": {
+    "vtex.native-types": "0.x",
+    "vtex.css-handles": "0.x",
+    "vtex.styleguide": "9.x",
+    "vtex.store-icons": "0.x"
+  },
+  "registries": [
+    "smartcheckout"
+  ],
+  "policies": [],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

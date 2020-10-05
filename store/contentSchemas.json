@@ -1,0 +1,51 @@
+{
+  "definitions": {
+    "Video": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "admin/editor.video.name.title",
+          "description": "admin/editor.video.name.description",
+          "type": "string"
+        },
+        "description": {
+          "title": "admin/editor.video.description.title",
+          "description": "admin/editor.video.description.description",
+          "type": "string"
+        },
+        "width": {
+          "title": "admin/editor.video.width.title",
+          "type": "string"
+        },
+        "height": {
+          "title": "admin/editor.video.height.title",
+          "type": "string"
+        },
+        "src": {
+          "title": "admin/editor.video.src.title",
+          "type": "string"
+        },
+        "autoPlay": {
+          "title": "admin/editor.video.autoplay.title",
+          "type": "boolean",
+          "default": false
+        },
+        "loop": {
+          "title": "admin/editor.video.loop.title",
+          "type": "boolean",
+          "default": false
+        },
+        "poster": {
+          "title": "admin/editor.video.poster.title",
+          "description": "admin/editor.video.poster.description",
+          "type": "string"
+        },
+        "uploadDate": {
+          "title": "admin/editor.video.uploadDate.title",
+          "description": "admin/editor.video.uploadDate.description",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

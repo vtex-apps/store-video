@@ -1,0 +1,8 @@
+{
+  "video": {
+    "component": "Video",
+    "content": {
+      "$ref": "app:vtex.store-video#/definitions/Video"
+    }
+  }
+}
