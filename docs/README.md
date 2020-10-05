@@ -81,7 +81,7 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 | `videoElement`      |
 | `volumeContainer`   |
 | `volumeButton`      |
-| `volumeSlider`      |
+| `volumeSlider`      | 
 
 :warning: _It's required that `controlsType` prop is set as `custom-vtex` in order to have the following CSS Handles properly working: `controlsContainer`, `fullscreenButton`, `playButton`, `trackContainer`, `trackTimer`, `trackBar`, `volumeContainer`, `volumeSlider`, and `volumeButton`.
 
