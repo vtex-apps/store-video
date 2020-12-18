@@ -7,14 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update `vtex.css-handles` to `1.x`.
+
+### Fixed
+
+- Remove `dangerouslySetInnerHTML`.
+
 ## [1.0.1] - 2020-12-15
 
+### Fixed
+
+- Loop parameter in the youtube player.
+
 ## [1.0.0] - 2020-10-05
+
+### Changed
+
+- Update from v0 to v1.
 
 ## [0.1.0] - 2020-10-05
 
 ### Added
+
 - Stable version.
 
 ### Added
+
 - Intial release.

@@ -42,24 +42,25 @@ The Video app allows you to display video assets on your store pages.
 
 ### `video` props
 
-| Prop name        | Type                 | Description                                                                                                                                                                       | Default value     |
-| ---------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| `name`           | `string`             | Video name for SEO and accessibility.                                                                                                                                             | `undefined`       |
-| `description`    | `string`             | Video description for SEO and accessibility.                                                                                                                                      | `undefined`       |
-| `src`            | `string`             | Video URL. It can be a `youtube` URL, `vimeo` URL or a self-hosted video URL.                                                                                                     | `undefined`       |
-| `type`           | `string`             | Video type.                                                                                               | `undefined`       |
-| `poster`         | `string`             | Cover image URL to be displayed before the video playback.                                                                                                            | `undefined`       |
-| `controlsType`   | `enum`               | The type of controls. It can be `custom-vtex`( only works if the video URL represents a HTML5 player ), `native` or `none`. | `undefined`       |
-| `autoPlay`       | `boolean`            | Whether the video will start automatically after loaded(`true`) or not(`false`). Note that if the value is `true`, the muted property will automatically be setted to `true`.                      | `false`           |
-| `muted`          | `boolean`            | Whether the video will start with the audio on(`false`) or not(`true`).                                                                                                           | `false`           |
-| `loop`           | `boolean`            | Whether the video will run in a loop(`true`) or not(`false`).                                                                                                                     | `false`           |
-| `width`          | `number` or `string` | The width of the video exhibition area. It could be as %(`string`) or pixels(`number`).                                                                                           | `undefined`       |
-| `height`         | `number` or `string` | The height of the video exhibition area. It could be as %(`string`) or pixels(`number`).                                                                                          | `undefined`       |
-| `PlayIcon`       | `string`             | Video play icon for `custom-vtex` controls.                                                                                                                                                                  | `icon-play`       |
-| `PauseIcon`      | `string`             | Video pause icon for `custom-vtex` controls.                                                                                                                                                                 | `icon-pause`      |
-| `VolumeOnIcon`   | `string`             | Video volume on icon for `custom-vtex` controls.                                                                                                                                                             | `icon-volume-on`  |
-| `VolumeOffIcon`  | `string`             | Video volume off icon for `custom-vtex` controls.                                                                                                                                                            | `icon-volume-off` |
-| `FullscreenIcon` | `string`             | Video fullscreen icon for `custom-vtex` controls.                                                                                                                                                            | `icon-extend`     |
+| Prop name        | Type                 | Description                                                                                                                                                                                            | Default value     |
+| ---------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| `name`           | `string`             | Video name for SEO and accessibility.                                                                                                                                                                  | `undefined`       |
+| `description`    | `string`             | Video description for SEO and accessibility.                                                                                                                                                           | `undefined`       |
+| `src`            | `string`             | Video URL. It can be a `youtube` URL, `vimeo` URL or a self-hosted video URL.                                                                                                                          | `undefined`       |
+| `type`           | `string`             | Video type.                                                                                                                                                                                            | `undefined`       |
+| `poster`         | `string`             | Cover image URL to be displayed before the video playback.                                                                                                                                             | `undefined`       |
+| `controlsType`   | `enum`               | The type of controls. It can be `custom-vtex`( only works if the video URL represents a HTML5 player ), `native` or `none`.                                                                            | `undefined`       |
+| `autoPlay`       | `boolean`            | Whether the video will start automatically after loaded(`true`) or not(`false`). Note that if the value is `true`, the muted property will automatically be setted to `true`.                          | `false`           |
+| `muted`          | `boolean`            | Whether the video will start with the audio on(`false`) or not(`true`).                                                                                                                                | `false`           |
+| `loop`           | `boolean`            | Whether the video will run in a loop(`true`) or not(`false`).                                                                                                                                          | `false`           |
+| `width`          | `number` or `string` | The width of the video exhibition area. It could be as %(`string`) or pixels(`number`).                                                                                                                | `undefined`       |
+| `height`         | `number` or `string` | The height of the video exhibition area. It could be as %(`string`) or pixels(`number`).                                                                                                               | `undefined`       |
+| `PlayIcon`       | `string`             | Video play icon for `custom-vtex` controls.                                                                                                                                                            | `icon-play`       |
+| `PauseIcon`      | `string`             | Video pause icon for `custom-vtex` controls.                                                                                                                                                           | `icon-pause`      |
+| `VolumeOnIcon`   | `string`             | Video volume on icon for `custom-vtex` controls.                                                                                                                                                       | `icon-volume-on`  |
+| `VolumeOffIcon`  | `string`             | Video volume off icon for `custom-vtex` controls.                                                                                                                                                      | `icon-volume-off` |
+| `FullscreenIcon` | `string`             | Video fullscreen icon for `custom-vtex` controls.                                                                                                                                                      | `icon-extend`     |
+| `classes`        | `CustomCSSClasses`   | Used to override default CSS handles. To better understand how this prop works, we recommend reading about it here. Note that this is only useful if you're importing this block as a React component. | `undefined`       |
 
 Use the **admin's Site Editor** to manage some props declared in the `video` block.
 
@@ -81,9 +82,9 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 | `videoElement`      |
 | `volumeContainer`   |
 | `volumeButton`      |
-| `volumeSlider`      | 
+| `volumeSlider`      |
 
-:warning: _It's required that `controlsType` prop is set as `custom-vtex` in order to have the following CSS Handles properly working: `controlsContainer`, `fullscreenButton`, `playButton`, `trackContainer`, `trackTimer`, `trackBar`, `volumeContainer`, `volumeSlider`, and `volumeButton`.
+:warning: \_It's required that `controlsType` prop is set as `custom-vtex` in order to have the following CSS Handles properly working: `controlsContainer`, `fullscreenButton`, `playButton`, `trackContainer`, `trackTimer`, `trackBar`, `volumeContainer`, `volumeSlider`, and `volumeButton`.
 
 <!-- DOCS-IGNORE:start -->
 

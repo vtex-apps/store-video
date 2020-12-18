@@ -12,13 +12,11 @@
   },
   "dependencies": {
     "vtex.native-types": "0.x",
-    "vtex.css-handles": "0.x",
+    "vtex.css-handles": "1.x",
     "vtex.styleguide": "9.x",
     "vtex.store-icons": "0.x"
   },
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "policies": [],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

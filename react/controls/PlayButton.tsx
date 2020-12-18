@@ -1,14 +1,15 @@
-import React, { FC } from 'react'
+import type { FC } from 'react'
+import React from 'react'
 import {
   IconPlay as DefaultIconPlay,
   IconPause as DefaultIconPause,
 } from 'vtex.store-icons'
 
+import { useVideoHandles } from '../HandlesContext'
 import styles from '../styles/styles.css'
 
 export interface PlayButtonProps {
   isPlaying: boolean | null
-  cssHandles: Record<'playButton', string>
   play: () => void
   pause: () => void
   IconPlay?: FC<unknown>
@@ -17,12 +18,13 @@ export interface PlayButtonProps {
 
 const PlayButton: FC<PlayButtonProps> = ({
   isPlaying,
-  cssHandles,
   IconPlay,
   IconPause,
   play,
   pause,
 }) => {
+  const { handles } = useVideoHandles()
+
   const PauseIcon = IconPause ? (
     <IconPause />
   ) : (
@@ -37,7 +39,7 @@ const PlayButton: FC<PlayButtonProps> = ({
 
   return (
     <button
-      className={`${cssHandles.playButton} ${styles.button} absolute bottom-2 left-0 v-mid z-1`}
+      className={`${handles.playButton} ${styles.button} absolute bottom-2 left-0 v-mid z-1`}
       onClick={() => (isPlaying ? pause() : play())}
     >
       {isPlaying ? PauseIcon : PlayIcon}

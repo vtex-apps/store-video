@@ -1,9 +1,6 @@
-export const useCssHandles = (cssHandles) => {
-  const handles = {}
-
-  cssHandles.forEach((handle) => {
-    handles[handle] = handle
-  })
-
-  return handles
+export const useCssHandles = (input) => {
+  return {
+    handles: Object.keys(input),
+    withModifier: (id) => id,
+  }
 }

@@ -1,4 +1,7 @@
-import { VideoHTMLAttributes, FC } from 'react'
+import type { VideoHTMLAttributes, FC } from 'react'
+import type { CssHandlesTypes } from 'vtex.css-handles'
+
+import type { CSS_HANDLES } from './players/HTML5Player'
 
 export interface VideoPlayer extends VideoHTMLAttributes<HTMLVideoElement> {
   name?: string
@@ -13,4 +16,5 @@ export interface VideoPlayer extends VideoHTMLAttributes<HTMLVideoElement> {
   IconVolumeOn?: FC<unknown>
   IconVolumeOff?: FC<unknown>
   uploadDate?: string
+  classes?: CssHandlesTypes.CustomClasses<typeof CSS_HANDLES>
 }
