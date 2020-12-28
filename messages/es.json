@@ -12,5 +12,7 @@
   "admin/editor.video.description.title": "Descripción",
   "admin/editor.video.description.description": "Video descripción para SEO y accesibilidad",
   "admin/editor.video.uploadDate.title": "Fecha de carga",
-  "admin/editor.video.uploadDate.description": "Video fecha para SEO, en el formato `aaaa-mm-dd hh:mm:ss`"
+  "admin/editor.video.uploadDate.description": "Video fecha para SEO, en el formato `aaaa-mm-dd hh:mm:ss`",
+  "admin/editor.video.fallbackImageUrl.title": "Fallback Image URL",
+  "admin/editor.video.fallbackImageUrl.description": "URL de la imagen de respaldo del video que se mostrará si el video no está disponible"
 }

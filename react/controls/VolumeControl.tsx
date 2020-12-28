@@ -1,19 +1,19 @@
-import React, { useState, FC, MouseEventHandler } from 'react'
+import type { FC, MouseEventHandler } from 'react'
+import React, { useState } from 'react'
 import {
   IconVolumeOff as DefaultIconVolumeOff,
   IconVolumeOn as DefaultIconVolumeOn,
 } from 'vtex.store-icons'
 
+import { useVideoHandles } from '../HandlesContext'
 import styles from '../styles/styles.css'
+
+export const CSS_HANDLES = ['volumeContainer', 'volumeSlider', 'volumeButton']
 
 export interface VolumeControlProps {
   setVolume: (volume: number) => void
   toggleMute: MouseEventHandler<HTMLButtonElement>
   isMuted: boolean | null
-  cssHandles: Record<
-    'volumeContainer' | 'volumeButton' | 'volumeSlider',
-    string
-  >
   volume: number | undefined
   IconVolumeOn?: FC<unknown>
   IconVolumeOff?: FC<unknown>
@@ -23,11 +23,12 @@ const VolumeControl: FC<VolumeControlProps> = ({
   setVolume,
   toggleMute,
   isMuted,
-  cssHandles,
   volume,
   IconVolumeOn,
   IconVolumeOff,
 }) => {
+  const { handles } = useVideoHandles()
+
   const [showVolumeSlider, setShowVolumeSlider] = useState(false)
 
   const VolumeOffIcon = IconVolumeOff ? (
@@ -44,13 +45,13 @@ const VolumeControl: FC<VolumeControlProps> = ({
 
   return (
     <div
-      className={`${cssHandles.volumeContainer} dib absolute bottom-2 right-2`}
+      className={`${handles.volumeContainer} dib absolute bottom-2 right-2`}
       onMouseEnter={() => setShowVolumeSlider(true)}
       onMouseLeave={() => setShowVolumeSlider(false)}
     >
       {showVolumeSlider && (
         <input
-          className={`${cssHandles.volumeSlider} ${styles.trackBar} ${styles.volumeSlider} v-mid`}
+          className={`${handles.volumeSlider} ${styles.volumeSlider} v-mid`}
           disabled={isMuted === true}
           type="range"
           defaultValue={volume && volume * 10}
@@ -62,7 +63,7 @@ const VolumeControl: FC<VolumeControlProps> = ({
 
       <button
         onClick={toggleMute}
-        className={`${cssHandles.volumeButton} ${styles.button} v-mid ml4`}
+        className={`${handles.volumeButton} ${styles.button} v-mid ml4`}
       >
         {isMuted ? VolumeOffIcon : VolumeOnIcon}
       </button>

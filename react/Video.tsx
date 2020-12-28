@@ -1,6 +1,7 @@
 import React from 'react'
+import { jsonLdScriptProps } from 'react-schemaorg'
 
-import { VideoPlayer } from './interfaces'
+import type { VideoPlayer } from './interfaces'
 import VimeoPlayer from './players/VimeoPlayer'
 import HTML5Player from './players/HTML5Player'
 import YoutubePlayer from './players/YoutubePlayer'
@@ -16,18 +17,15 @@ const Video: StorefrontFunctionComponent<VideoPlayer> = (props) => {
   const StructuredData = () => {
     return (
       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: `{
-          "@context": "http://schema.org",
-          "@type": "VideoObject",
-          "name": "${name}",
-          "description": "${description}",
-          "contentUrl": "${src}",
-          "uploadDate": ${uploadDate ? new Date(uploadDate) : undefined},
-          "thumbnailUrl": "${poster ?? src}",
-        }`,
-        }}
+        {...jsonLdScriptProps({
+          '@context': 'http://schema.org',
+          '@type': 'VideoObject',
+          name,
+          description,
+          contentUrl: src,
+          uploadDate: uploadDate ? new Date(uploadDate) : undefined,
+          thumbnailUrl: poster ?? src,
+        })}
       />
     )
   }
