@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "store-video",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "title": "Video",
   "description": "Store component to handle video",
   "builders": {
@@ -16,7 +16,9 @@
     "vtex.styleguide": "9.x",
     "vtex.store-icons": "0.x"
   },
-  "registries": ["smartcheckout"],
+  "registries": [
+    "smartcheckout"
+  ],
   "policies": [],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
