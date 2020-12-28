@@ -4,6 +4,8 @@ import React, { useRef } from 'react'
 import { useVideoHandles } from '../HandlesContext'
 import useVideoTrack, { formatTime } from '../useVideoTrack'
 
+export const CSS_HANDLES = ['trackContainer', 'trackTimer', 'trackBar']
+
 export interface TrackControlProps {
   videoRef: RefObject<HTMLVideoElement>
   changeState: (property: string, value: any) => void

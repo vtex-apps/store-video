@@ -6,10 +6,18 @@ import { useCssHandles } from 'vtex.css-handles'
 import useVideo from '../useVideo'
 import styles from '../styles/styles.css'
 import type { VideoPlayer } from '../interfaces'
-import PlayButton from '../controls/PlayButton'
-import FullscreenButton from '../controls/FullscreenButton'
-import TrackControl from '../controls/TrackControl'
-import VolumeControl from '../controls/VolumeControl'
+import PlayButton, {
+  CSS_HANDLES as PLAY_BUTTON_CSS_HANDLES,
+} from '../controls/PlayButton'
+import FullscreenButton, {
+  CSS_HANDLES as FULLSCREEN_BUTTON_CSS_HANDLES,
+} from '../controls/FullscreenButton'
+import TrackControl, {
+  CSS_HANDLES as TRACK_CONTROL_CSS_HANDLES,
+} from '../controls/TrackControl'
+import VolumeControl, {
+  CSS_HANDLES as VOLUME_CONTROL_CSS_HANDLES,
+} from '../controls/VolumeControl'
 import { useVideoHandles, VideoHandlesProvider } from '../HandlesContext'
 
 export const CSS_HANDLES = [
@@ -18,14 +26,10 @@ export const CSS_HANDLES = [
   'fallbackContainer',
   'fallbackImage',
   'controlsContainer',
-  'playButton',
-  'trackContainer',
-  'trackTimer',
-  'trackBar',
-  'fullscreenButton',
-  'volumeContainer',
-  'volumeSlider',
-  'volumeButton',
+  ...PLAY_BUTTON_CSS_HANDLES,
+  ...TRACK_CONTROL_CSS_HANDLES,
+  ...FULLSCREEN_BUTTON_CSS_HANDLES,
+  ...VOLUME_CONTROL_CSS_HANDLES,
 ] as const
 
 interface FallbackImageProps {
@@ -68,7 +72,7 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
   IconVolumeOff,
   classes,
 }) => {
-  const { handles } = useCssHandles(CSS_HANDLES, { classes })
+  const { handles, withModifiers } = useCssHandles(CSS_HANDLES, { classes })
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const {
@@ -92,7 +96,7 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
   }
 
   return (
-    <VideoHandlesProvider handles={handles}>
+    <VideoHandlesProvider withModifiers={withModifiers} handles={handles}>
       <div
         ref={containerRef}
         aria-label={description}

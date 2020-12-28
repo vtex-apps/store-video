@@ -8,6 +8,8 @@ import {
 import { useVideoHandles } from '../HandlesContext'
 import styles from '../styles/styles.css'
 
+export const CSS_HANDLES = ['volumeContainer', 'volumeSlider', 'volumeButton']
+
 export interface VolumeControlProps {
   setVolume: (volume: number) => void
   toggleMute: MouseEventHandler<HTMLButtonElement>

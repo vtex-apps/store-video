@@ -1,17 +1,12 @@
 {
-  "version": "0.0.1",
   "name": "video",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
     "lint": "eslint --ext js,jsx,ts,tsx .",
-    "lint:locales": "intl-equalizer",
     "format": "prettier --write \"**/*.{ts,js,json}\"",
+    "lint:locales": "intl-equalizer",
     "test": "cd ./react && yarn test"
-  },
-  "intl-equalizer": {
-    "referenceLocale": "en",
-    "localeDirectory": "messages"
   },
   "husky": {
     "hooks": {
@@ -21,6 +16,9 @@
   "lint-staged": {
     "*.{ts,js,tsx,jsx}": [
       "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,graphql,gql}": [
       "prettier --write"
     ],
     "*.json": [
@@ -37,5 +35,10 @@
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "typescript": "^4.0.4"
+  },
+  "version": "0.0.1",
+  "intl-equalizer": {
+    "referenceLocale": "en",
+    "localeDirectory": "messages"
   }
 }

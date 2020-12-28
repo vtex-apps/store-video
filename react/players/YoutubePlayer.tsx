@@ -1,7 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
+import React from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
-import { VideoPlayer } from '../interfaces'
+import type { VideoPlayer } from '../interfaces'
 
 const CSS_HANDLES = ['videoContainer', 'videoElement'] as const
 
@@ -16,11 +17,14 @@ const YoutubePlayer: FunctionComponent<VideoPlayer> = ({
   loop,
   src,
   description,
+  classes,
 }) => {
-  const handles = useCssHandles(CSS_HANDLES)
+  const { handles } = useCssHandles(CSS_HANDLES, { classes })
   const matchedSrc = src.match(YOUTUBE_REGEX)
   const videoId = matchedSrc?.[1]
-  const params = `autoplay=${autoPlay}&loop=${loop ? '1&playlist=' + videoId : '0'}&enablejsapi=1&iv_load_policy=3&modestbranding=1&rel=0&controls=${
+  const params = `autoplay=${autoPlay}&loop=${
+    loop ? `1&playlist=${videoId}` : '0'
+  }&enablejsapi=1&iv_load_policy=3&modestbranding=1&rel=0&controls=${
     controlsType === 'none' ? 0 : 1
   }`
 

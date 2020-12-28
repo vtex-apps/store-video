@@ -8,6 +8,8 @@ import {
 import { useVideoHandles } from '../HandlesContext'
 import styles from '../styles/styles.css'
 
+export const CSS_HANDLES = ['playButton']
+
 export interface PlayButtonProps {
   isPlaying: boolean | null
   play: () => void
