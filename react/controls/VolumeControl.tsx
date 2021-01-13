@@ -8,7 +8,11 @@ import {
 import { useVideoHandles } from '../HandlesContext'
 import styles from '../styles/styles.css'
 
-export const CSS_HANDLES = ['volumeContainer', 'volumeSlider', 'volumeButton']
+export const CSS_HANDLES = [
+  'volumeContainer',
+  'volumeSlider',
+  'volumeButton',
+] as const
 
 export interface VolumeControlProps {
   setVolume: (volume: number) => void

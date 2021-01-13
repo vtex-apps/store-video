@@ -1,7 +1,7 @@
 import React from 'react'
 import { jsonLdScriptProps } from 'react-schemaorg'
 
-import type { VideoPlayer } from './interfaces'
+import type { VideoPlayer } from './VideoTypes'
 import VimeoPlayer from './players/VimeoPlayer'
 import HTML5Player from './players/HTML5Player'
 import YoutubePlayer from './players/YoutubePlayer'

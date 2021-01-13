@@ -2,7 +2,7 @@ import type { FunctionComponent } from 'react'
 import React from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
-import type { VideoPlayer } from '../interfaces'
+import type { VideoPlayer } from '../VideoTypes'
 
 const CSS_HANDLES = ['videoContainer', 'videoElement'] as const
 

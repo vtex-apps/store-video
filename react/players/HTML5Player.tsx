@@ -5,7 +5,7 @@ import { useCssHandles } from 'vtex.css-handles'
 
 import useVideo from '../useVideo'
 import styles from '../styles/styles.css'
-import type { VideoPlayer } from '../interfaces'
+import type { VideoPlayer } from '../VideoTypes'
 import PlayButton, {
   CSS_HANDLES as PLAY_BUTTON_CSS_HANDLES,
 } from '../controls/PlayButton'

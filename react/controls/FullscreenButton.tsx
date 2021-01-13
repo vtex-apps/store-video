@@ -5,7 +5,7 @@ import { IconExpand as DefaultIconFullscreen } from 'vtex.store-icons'
 import { useVideoHandles } from '../HandlesContext'
 import styles from '../styles/styles.css'
 
-export const CSS_HANDLES = ['fullscreenButton']
+export const CSS_HANDLES = ['fullscreenButton'] as const
 export interface FullscreenButtonProps {
   toggleFullscreenMode: () => void
   IconFullscreen?: FC<unknown>

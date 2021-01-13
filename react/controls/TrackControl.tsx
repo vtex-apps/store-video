@@ -4,7 +4,7 @@ import React, { useRef } from 'react'
 import { useVideoHandles } from '../HandlesContext'
 import useVideoTrack, { formatTime } from '../useVideoTrack'
 
-export const CSS_HANDLES = ['trackContainer', 'trackTimer', 'trackBar']
+export const CSS_HANDLES = ['trackContainer', 'trackTimer', 'trackBar'] as const
 
 export interface TrackControlProps {
   videoRef: RefObject<HTMLVideoElement>
