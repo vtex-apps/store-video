@@ -1,4 +1,4 @@
-import type { FC } from 'react'
+import type { ComponentType } from 'react'
 import React from 'react'
 import {
   IconPlay as DefaultIconPlay,
@@ -14,17 +14,17 @@ export interface PlayButtonProps {
   isPlaying: boolean | null
   play: () => void
   pause: () => void
-  IconPlay?: FC<unknown>
-  IconPause?: FC<unknown>
+  IconPlay?: ComponentType<unknown>
+  IconPause?: ComponentType<unknown>
 }
 
-const PlayButton: FC<PlayButtonProps> = ({
+function PlayButton({
   isPlaying,
   IconPlay,
   IconPause,
   play,
   pause,
-}) => {
+}: PlayButtonProps) {
   const { handles } = useVideoHandles()
 
   const PauseIcon = IconPause ? (

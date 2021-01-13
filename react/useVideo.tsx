@@ -1,4 +1,5 @@
-import { RefObject, useState, useEffect } from 'react'
+import type { RefObject } from 'react'
+import { useState, useEffect } from 'react'
 
 interface State {
   isMuted: boolean | null
@@ -89,7 +90,8 @@ const useVideo = (
     setState({
       ...state,
       isMuted: currentVideoRef?.muted === true,
-      isPlaying: currentVideoRef?.autoplay || currentVideoRef?.paused === false,
+      isPlaying:
+        Boolean(currentVideoRef?.autoplay) || currentVideoRef?.paused === false,
       networkStatus: getNetworkStatus(),
     })
 

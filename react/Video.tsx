@@ -9,7 +9,7 @@ import YoutubePlayer from './players/YoutubePlayer'
 const VIMEO_PATTERN = /vimeo/
 const YOUTUBE_PATTERN = /youtube|youtu.be/
 
-const Video: StorefrontFunctionComponent<VideoPlayer> = (props) => {
+function Video(props: VideoPlayer) {
   const { src, name, description, poster, uploadDate } = props
   const isVimeo = VIMEO_PATTERN.test(src)
   const isYoutube = YOUTUBE_PATTERN.test(src)

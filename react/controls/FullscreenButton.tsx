@@ -1,4 +1,4 @@
-import type { FC } from 'react'
+import type { ComponentType } from 'react'
 import React from 'react'
 import { IconExpand as DefaultIconFullscreen } from 'vtex.store-icons'
 
@@ -8,13 +8,13 @@ import styles from '../styles/styles.css'
 export const CSS_HANDLES = ['fullscreenButton'] as const
 export interface FullscreenButtonProps {
   toggleFullscreenMode: () => void
-  IconFullscreen?: FC<unknown>
+  IconFullscreen?: ComponentType<unknown>
 }
 
-const FullscreenButton: FC<FullscreenButtonProps> = ({
+function FullscreenButton({
   toggleFullscreenMode,
   IconFullscreen,
-}) => {
+}: FullscreenButtonProps) {
   const { handles } = useVideoHandles()
 
   return (
