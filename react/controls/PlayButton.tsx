@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react'
+import type { ElementType } from 'react'
 import React from 'react'
 import {
   IconPlay as DefaultIconPlay,
@@ -14,8 +14,8 @@ export interface PlayButtonProps {
   isPlaying: boolean | null
   play: () => void
   pause: () => void
-  IconPlay?: ComponentType<unknown>
-  IconPause?: ComponentType<unknown>
+  IconPlay?: ElementType<unknown>
+  IconPause?: ElementType<unknown>
 }
 
 function PlayButton({

@@ -1,4 +1,4 @@
-import type { ComponentType, MouseEventHandler } from 'react'
+import type { ElementType, MouseEventHandler } from 'react'
 import React, { useState } from 'react'
 import {
   IconVolumeOff as DefaultIconVolumeOff,
@@ -19,8 +19,8 @@ export interface VolumeControlProps {
   toggleMute: MouseEventHandler<HTMLButtonElement>
   isMuted: boolean | null
   volume: number | undefined
-  IconVolumeOn?: ComponentType<unknown>
-  IconVolumeOff?: ComponentType<unknown>
+  IconVolumeOn?: ElementType<unknown>
+  IconVolumeOff?: ElementType<unknown>
 }
 
 function VolumeControl({

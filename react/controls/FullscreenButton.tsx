@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react'
+import type { ElementType } from 'react'
 import React from 'react'
 import { IconExpand as DefaultIconFullscreen } from 'vtex.store-icons'
 
@@ -8,7 +8,7 @@ import styles from '../styles/styles.css'
 export const CSS_HANDLES = ['fullscreenButton'] as const
 export interface FullscreenButtonProps {
   toggleFullscreenMode: () => void
-  IconFullscreen?: ComponentType<unknown>
+  IconFullscreen?: ElementType
 }
 
 function FullscreenButton({
