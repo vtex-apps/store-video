@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "store-video",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "title": "Video",
   "description": "Store component to handle video",
   "builders": {
