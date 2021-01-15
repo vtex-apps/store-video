@@ -1,15 +1,14 @@
-import type { FunctionComponent } from 'react'
 import React from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
-import type { VideoPlayer } from '../interfaces'
+import type { VideoPlayer } from '../VideoTypes'
 
 const CSS_HANDLES = ['videoContainer', 'videoElement'] as const
 
 // https://regex101.com/r/CWmgOb/1
 const YOUTUBE_REGEX = /(?:youtube(?:-nocookie)?\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
 
-const YoutubePlayer: FunctionComponent<VideoPlayer> = ({
+function YoutubePlayer({
   width,
   height,
   autoPlay,
@@ -18,7 +17,7 @@ const YoutubePlayer: FunctionComponent<VideoPlayer> = ({
   src,
   description,
   classes,
-}) => {
+}: VideoPlayer) {
   const { handles } = useCssHandles(CSS_HANDLES, { classes })
   const matchedSrc = src.match(YOUTUBE_REGEX)
   const videoId = matchedSrc?.[1]

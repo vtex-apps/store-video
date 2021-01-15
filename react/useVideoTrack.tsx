@@ -1,4 +1,5 @@
-import { RefObject, useState, useEffect } from 'react'
+import type { RefObject } from 'react'
+import { useState, useEffect } from 'react'
 
 interface State {
   currentTime?: number

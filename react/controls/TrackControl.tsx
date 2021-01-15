@@ -1,20 +1,17 @@
-import type { RefObject, FunctionComponent, ChangeEvent } from 'react'
+import type { RefObject, ChangeEvent } from 'react'
 import React, { useRef } from 'react'
 
 import { useVideoHandles } from '../HandlesContext'
 import useVideoTrack, { formatTime } from '../useVideoTrack'
 
-export const CSS_HANDLES = ['trackContainer', 'trackTimer', 'trackBar']
+export const CSS_HANDLES = ['trackContainer', 'trackTimer', 'trackBar'] as const
 
 export interface TrackControlProps {
   videoRef: RefObject<HTMLVideoElement>
-  changeState: (property: string, value: any) => void
+  changeState: (property: string, value: unknown) => void
 }
 
-const TrackControl: FunctionComponent<TrackControlProps> = ({
-  videoRef,
-  changeState,
-}) => {
+function TrackControl({ videoRef, changeState }: TrackControlProps) {
   const { handles } = useVideoHandles()
   const trackBarRef = useRef<HTMLInputElement>(null)
   const { duration, currentTime, setCurrentTime } = useVideoTrack(
@@ -48,7 +45,7 @@ const TrackControl: FunctionComponent<TrackControlProps> = ({
         min={0}
         step={0.05}
         defaultValue="0"
-        max={duration || 0}
+        max={duration ?? 0}
       />
     </div>
   )

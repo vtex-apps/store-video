@@ -1,4 +1,5 @@
-import React, { RefObject } from 'react'
+import React from 'react'
+import type { RefObject } from 'react'
 import { renderHook, render } from '@vtex/test-tools/react'
 import { act } from 'react-test-renderer'
 
@@ -163,7 +164,6 @@ describe('Video logic', () => {
 
     const {
       result: {
-        current,
         current: { setCurrentTime },
       },
     } = renderHook(() => useVideoTrack(videoRef, trackBarRef))
@@ -175,12 +175,9 @@ describe('Video logic', () => {
     expect(videoRef?.current?.currentTime).toBe(2)
 
     act(() => {
-      videoRef?.current?.dispatchEvent(
-        new window.Event('timeupdate', () => {
-          expect(trackBarRef?.current.value).toBe('2')
-          expect(current.currentTime).toBe(2)
-        })
-      )
+      videoRef?.current?.dispatchEvent(new window.Event('timeupdate'))
     })
+
+    expect(trackBarRef?.current.value).toBe('2')
   })
 })

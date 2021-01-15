@@ -1,4 +1,4 @@
-import type { FC, MouseEventHandler } from 'react'
+import type { ElementType, MouseEventHandler } from 'react'
 import React, { useState } from 'react'
 import {
   IconVolumeOff as DefaultIconVolumeOff,
@@ -8,25 +8,29 @@ import {
 import { useVideoHandles } from '../HandlesContext'
 import styles from '../styles/styles.css'
 
-export const CSS_HANDLES = ['volumeContainer', 'volumeSlider', 'volumeButton']
+export const CSS_HANDLES = [
+  'volumeContainer',
+  'volumeSlider',
+  'volumeButton',
+] as const
 
 export interface VolumeControlProps {
   setVolume: (volume: number) => void
   toggleMute: MouseEventHandler<HTMLButtonElement>
   isMuted: boolean | null
   volume: number | undefined
-  IconVolumeOn?: FC<unknown>
-  IconVolumeOff?: FC<unknown>
+  IconVolumeOn?: ElementType<unknown>
+  IconVolumeOff?: ElementType<unknown>
 }
 
-const VolumeControl: FC<VolumeControlProps> = ({
+function VolumeControl({
   setVolume,
   toggleMute,
   isMuted,
   volume,
   IconVolumeOn,
   IconVolumeOff,
-}) => {
+}: VolumeControlProps) {
   const { handles } = useVideoHandles()
 
   const [showVolumeSlider, setShowVolumeSlider] = useState(false)

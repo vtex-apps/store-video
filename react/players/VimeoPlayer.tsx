@@ -1,15 +1,14 @@
-import type { FunctionComponent } from 'react'
 import React from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
-import type { VideoPlayer } from '../interfaces'
+import type { VideoPlayer } from '../VideoTypes'
 
 const CSS_HANDLES = ['videoContainer', 'videoElement'] as const
 
 // https://regex101.com/r/wdKKHO/1
 const VIMEO_REGEX = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/
 
-const VimeoPlayer: FunctionComponent<VideoPlayer> = ({
+function VimeoPlayer({
   width,
   height,
   autoPlay,
@@ -17,7 +16,7 @@ const VimeoPlayer: FunctionComponent<VideoPlayer> = ({
   src,
   description,
   classes,
-}) => {
+}: VideoPlayer) {
   const { handles } = useCssHandles(CSS_HANDLES, { classes })
   const params = `autoplay=${autoPlay}&loop=${loop}&enablejsapi=1&iv_load_policy=3&modestbranding=1`
   const matchedSrc = src.match(VIMEO_REGEX)

@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import type { FC } from 'react'
 import React, { useRef } from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
 import useVideo from '../useVideo'
 import styles from '../styles/styles.css'
-import type { VideoPlayer } from '../interfaces'
+import type { VideoPlayer } from '../VideoTypes'
 import PlayButton, {
   CSS_HANDLES as PLAY_BUTTON_CSS_HANDLES,
 } from '../controls/PlayButton'
@@ -37,10 +36,10 @@ interface FallbackImageProps {
   description?: string
 }
 
-const FallbackImage: FC<FallbackImageProps> = ({
+function FallbackImage({
   imageUrl = 'https://storecomponents.vtexassets.com/arquivos/ids/155639',
   description,
-}) => {
+}: FallbackImageProps) {
   const { handles } = useVideoHandles()
 
   return (
@@ -54,7 +53,7 @@ const FallbackImage: FC<FallbackImageProps> = ({
   )
 }
 
-const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
+function HTML5Player({
   src,
   type,
   width,
@@ -71,7 +70,7 @@ const HTML5Player: StorefrontFunctionComponent<VideoPlayer> = ({
   IconVolumeOn,
   IconVolumeOff,
   classes,
-}) => {
+}: VideoPlayer) {
   const { handles, withModifiers } = useCssHandles(CSS_HANDLES, { classes })
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
