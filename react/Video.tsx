@@ -3,7 +3,7 @@ import { jsonLdScriptProps } from 'react-schemaorg'
 
 import type { VideoPlayer } from './VideoTypes'
 import VimeoPlayer from './players/VimeoPlayer'
-import HTML5Player from './players/HTML5Player'
+import HTML5Player, { CSS_HANDLES } from './players/HTML5Player'
 import YoutubePlayer from './players/YoutubePlayer'
 
 const VIMEO_PATTERN = /vimeo/
@@ -51,5 +51,7 @@ function Video(props: VideoPlayer) {
 Video.schema = {
   title: 'admin/editor.video.title',
 }
+
+Video.cssHandles = CSS_HANDLES
 
 export default Video
