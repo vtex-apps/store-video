@@ -59,6 +59,7 @@ function HTML5Player({
   width,
   height,
   autoPlay,
+  playsInline,
   loop,
   poster,
   controlsType,
@@ -70,6 +71,7 @@ function HTML5Player({
   IconVolumeOn,
   IconVolumeOff,
   classes,
+  ...props
 }: VideoPlayer) {
   const { handles, withModifiers } = useCssHandles(CSS_HANDLES, { classes })
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -103,6 +105,7 @@ function HTML5Player({
         className={`relative ${handles.videoContainer} ba b--gray`}
       >
         <video
+          {...props}
           ref={videoRef}
           data-testid="html5-player"
           className={`${handles.videoElement} ${styles.videoElement} w-100 h-100`}
@@ -111,6 +114,7 @@ function HTML5Player({
           autoPlay={autoPlay}
           controls={hasNativeControls}
           muted={autoPlay ? true : muted}
+          playsInline={playsInline}
         >
           <source src={src} type={type && `video/${type}`} />
 
