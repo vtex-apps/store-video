@@ -5,6 +5,7 @@
   "admin/editor.video.height.title": "Altura",
   "admin/editor.video.autoplay.title": "Jugar automáticamente",
   "admin/editor.video.loop.title": "Reproducción en bucle",
+  "admin/editor.video.playsInline.title": "Reproducción intercalada (en dispositivos móviles)",
   "admin/editor.video.poster.title": "URL de la imagen en Thumbnail",
   "admin/editor.video.poster.description": "Imagen que se mostrará cuando el video aún no esté disponible",
   "admin/editor.video.name.title": "Nombre",

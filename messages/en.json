@@ -5,6 +5,7 @@
   "admin/editor.video.height.title": "Height",
   "admin/editor.video.autoplay.title": "Play automatically",
   "admin/editor.video.loop.title": "Play in loop",
+  "admin/editor.video.playsInline.title": "Play inline (in mobile devices)",
   "admin/editor.video.poster.title": "Thumbnail image URL",
   "admin/editor.video.poster.description": "Image to be displayed when video is not available yet",
   "admin/editor.video.name.title": "Name",

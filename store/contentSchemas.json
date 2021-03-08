@@ -35,6 +35,11 @@
           "type": "boolean",
           "default": false
         },
+        "playsInline": {
+          "title": "admin/editor.video.playsInline.title",
+          "type": "boolean",
+          "default": false
+        },
         "poster": {
           "title": "admin/editor.video.poster.title",
           "description": "admin/editor.video.poster.description",

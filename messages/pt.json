@@ -5,6 +5,7 @@
   "admin/editor.video.height.title": "Altura",
   "admin/editor.video.autoplay.title": "Reproduzir automaticamente",
   "admin/editor.video.loop.title": "Reproduzir em loop",
+  "admin/editor.video.playsInline.title": "Reproduzir in-line (em dispositivos móveis)",
   "admin/editor.video.poster.title": "URL da imagem de thumbnail",
   "admin/editor.video.poster.description": "Imagem a ser exibida quando o video ainda não estiver disponível",
   "admin/editor.video.name.title": "Nome",
