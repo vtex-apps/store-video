@@ -114,7 +114,7 @@ function HTML5Player({
           autoPlay={autoPlay}
           controls={hasNativeControls}
           muted={autoPlay ? true : muted}
-          playsInline={playsInline}
+          playsInline={autoPlay ? true : playsInline}
         >
           <source src={src} type={type && `video/${type}`} />
 
