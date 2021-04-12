@@ -15,6 +15,7 @@ function YoutubePlayer({
   controlsType,
   loop,
   playsInline,
+  muted,
   src,
   description,
   classes,
@@ -26,7 +27,9 @@ function YoutubePlayer({
     loop ? `1&playlist=${videoId}` : '0'
   }&enablejsapi=1&iv_load_policy=3&modestbranding=1&rel=0&controls=${
     controlsType === 'none' ? 0 : 1
-  }&playsinline=${playsInline ? '1' : '0'}`
+  }&playsinline=${playsInline ? '1' : '0'}&mute=${
+    autoPlay || muted ? '1' : '0'
+  }`
 
   return (
     <div className={`relative ${handles.videoContainer}`}>
