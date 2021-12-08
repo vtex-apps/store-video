@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Crowdin configuration file
+
 ## [1.4.2] - 2021-04-13
 ### Fixed
 - Youtube player not being muted when `autoPlay` is enabled
