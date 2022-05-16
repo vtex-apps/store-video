@@ -1,0 +1,19 @@
+{
+  "admin/editor.video.title": "動画",
+  "admin/editor.video.src.title": "URL",
+  "admin/editor.video.width.title": "幅",
+  "admin/editor.video.height.title": "高",
+  "admin/editor.video.autoplay.title": "自動再生",
+  "admin/editor.video.loop.title": "ループ再生",
+  "admin/editor.video.playsInline.title": "インライン (モバイルデバイス内) 再生",
+  "admin/editor.video.poster.title": "サムネイル画像 URL",
+  "admin/editor.video.poster.description": "動画がまだ利用できない時に表示する画像",
+  "admin/editor.video.name.title": "名前",
+  "admin/editor.video.name.description": "SEO およびアクセシビリティ用の動画名",
+  "admin/editor.video.description.title": "説明",
+  "admin/editor.video.description.description": "SEO およびアクセシビリティ用の動画概要",
+  "admin/editor.video.uploadDate.title": "アップロード日",
+  "admin/editor.video.uploadDate.description": "「yyyy-mm-dd hh:mm:ss」形式の SEO 用動画アップロード日",
+  "admin/editor.video.fallbackImageUrl.title": "フォールバック画像 URL",
+  "admin/editor.video.fallbackImageUrl.description": "動画が利用できない場合に表示する動画フォールバック画像 URL"
+}
