@@ -1,0 +1,19 @@
+{
+  "admin/editor.video.title": "الفيديو",
+  "admin/editor.video.src.title": "الرابط",
+  "admin/editor.video.width.title": "العرض",
+  "admin/editor.video.height.title": "الإرتفاع",
+  "admin/editor.video.autoplay.title": "تشغيل تلقائي",
+  "admin/editor.video.loop.title": "تشغيل في حلقة",
+  "admin/editor.video.playsInline.title": "تشغيل بالداخل (في الأجهزة المحمولة)",
+  "admin/editor.video.poster.title": "رابط الصورة المصغرة",
+  "admin/editor.video.poster.description": "الصورة التي سيتم عرضها عندما يكون الفيديو غير متوفر بعد",
+  "admin/editor.video.name.title": "الإسم",
+  "admin/editor.video.name.description": "اسم الفيديو لـ SEO وإمكانية الوصول",
+  "admin/editor.video.description.title": "الوصف",
+  "admin/editor.video.description.description": "استئناف الفيديو من أجل SEO وإمكانية الوصول",
+  "admin/editor.video.uploadDate.title": "تاريخ الرفع",
+  "admin/editor.video.uploadDate.description": "تاريخ تحميل الفيديو لـ SEO، بالصيغة 'yyyy-mm-dd hh: mm: ss'",
+  "admin/editor.video.fallbackImageUrl.title": "رابط الصورة الخلفية",
+  "admin/editor.video.fallbackImageUrl.description": "رابط الصورة الخلفية للفيديو ليتم عرضه إذا كان الفيديو غير متوفر"
+}
