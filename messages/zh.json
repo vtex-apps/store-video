@@ -1,0 +1,19 @@
+{
+  "admin/editor.video.title": "視訊",
+  "admin/editor.video.src.title": "URL",
+  "admin/editor.video.width.title": "寬度",
+  "admin/editor.video.height.title": "高度",
+  "admin/editor.video.autoplay.title": "自動播放",
+  "admin/editor.video.loop.title": "循環播放",
+  "admin/editor.video.playsInline.title": "內聯播放（在移動設備中）",
+  "admin/editor.video.poster.title": "縮略圖 URL",
+  "admin/editor.video.poster.description": "當視訊不可用時顯示的圖片",
+  "admin/editor.video.name.title": "名稱",
+  "admin/editor.video.name.description": "用於 SEO（搜索引擎優化）和可訪問的視訊名稱",
+  "admin/editor.video.description.title": "描述",
+  "admin/editor.video.description.description": "用於 SEO（搜索引擎優化）和可訪問的視訊摘要",
+  "admin/editor.video.uploadDate.title": "上載日期",
+  "admin/editor.video.uploadDate.description": "用於 SEO 視訊上傳日期，格式爲「yyyy-mm-dd hh:mm:ss」",
+  "admin/editor.video.fallbackImageUrl.title": "回退圖片 URL",
+  "admin/editor.video.fallbackImageUrl.description": "如果視訊不可用，將顯示視訊回退映像 URL"
+}

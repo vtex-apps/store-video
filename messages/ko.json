@@ -1,0 +1,19 @@
+{
+  "admin/editor.video.title": "비디오",
+  "admin/editor.video.src.title": "URL",
+  "admin/editor.video.width.title": "너비",
+  "admin/editor.video.height.title": "높이",
+  "admin/editor.video.autoplay.title": "자동으로 재생",
+  "admin/editor.video.loop.title": "반복 재생",
+  "admin/editor.video.playsInline.title": "반복 재생",
+  "admin/editor.video.poster.title": "썸네일 이미지 URL",
+  "admin/editor.video.poster.description": "동영상이 아직 제공되지 않을 때 표시될 이미지",
+  "admin/editor.video.name.title": "이름",
+  "admin/editor.video.name.description": "SEO 및 접근성에 대한 비디오 이름",
+  "admin/editor.video.description.title": "설명",
+  "admin/editor.video.description.description": "SEO 및 접근성에 대한 비디오 이력서",
+  "admin/editor.video.uploadDate.title": "업로드 날짜",
+  "admin/editor.video.uploadDate.description": "SEO에 대한 동영상 업로드 날짜(`yyyy-mm-dd hh:mm:ss` 형식)",
+  "admin/editor.video.fallbackImageUrl.title": "대체 이미지 URL",
+  "admin/editor.video.fallbackImageUrl.description": "비디오를 사용할 수 없는 경우 표시할 비디오 대체 이미지 URL"
+}

@@ -1,0 +1,19 @@
+{
+  "admin/editor.video.title": "วิดีโอ",
+  "admin/editor.video.src.title": "URL",
+  "admin/editor.video.width.title": "ความกว้าง",
+  "admin/editor.video.height.title": "ความสูง",
+  "admin/editor.video.autoplay.title": "เล่นอัตโนมติ",
+  "admin/editor.video.loop.title": "เล่นวน",
+  "admin/editor.video.playsInline.title": "เล่นอินไลน์ (ในอุปกรณ์เคลื่อนที่)",
+  "admin/editor.video.poster.title": "URL รูปขนาดย่อ",
+  "admin/editor.video.poster.description": "รูปที่จะแสดงเมื่อวิดีโอยังไม่พร้อม",
+  "admin/editor.video.name.title": "ชื่อ",
+  "admin/editor.video.name.description": "ชื่อวิดีโอสำหรับ SEO และการเข้าถึง",
+  "admin/editor.video.description.title": "คำอธิบาย",
+  "admin/editor.video.description.description": "เล่นวิดีโอต่อสำหรับ SEO และการเข้าถึง",
+  "admin/editor.video.uploadDate.title": "วันที่อัปโหลด",
+  "admin/editor.video.uploadDate.description": "วันที่อัปโหลดวิดีโอสำหรับ SEO ในรูปแบบ `ปปปป-ดด-วว ชช:นน:วว`",
+  "admin/editor.video.fallbackImageUrl.title": "URL รูปที่ใช้แทน",
+  "admin/editor.video.fallbackImageUrl.description": "URL รูปที่ใช้แทนวิดีโอเพื่อนำมาแสดงในกรณีที่วิดีโอไม่พร้อม"
+}
