@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.4] - 2025-05-19
+
+### Fixed
+- Added support for YouTube Shorts URLs (e.g. `https://www.youtube.com/shorts/...`) in the YoutubePlayer component by updating the video ID regex.
+
 ## [1.4.3] - 2021-12-08
 
 ### Added

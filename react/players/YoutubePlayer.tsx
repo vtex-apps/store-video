@@ -5,8 +5,8 @@ import type { VideoPlayer } from '../VideoTypes'
 
 const CSS_HANDLES = ['videoContainer', 'videoElement'] as const
 
-// https://regex101.com/r/CWmgOb/1
-const YOUTUBE_REGEX = /(?:youtube(?:-nocookie)?\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+// https://regex101.com/r/ZoBzAb/1
+const YOUTUBE_REGEX = /(?:youtube(?:-nocookie)?\.com\/(?:[^\n\s]+\/\S+\/|(?:v|e(?:mbed)?|shorts)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
 
 function YoutubePlayer({
   width,
