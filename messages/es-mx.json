@@ -1,0 +1,19 @@
+{
+  "admin/editor.video.title": "Video",
+  "admin/editor.video.src.title": "URL",
+  "admin/editor.video.width.title": "Anchura",
+  "admin/editor.video.height.title": "Altura",
+  "admin/editor.video.autoplay.title": "Reproducir automáticamente",
+  "admin/editor.video.loop.title": "Reproducir en repetición",
+  "admin/editor.video.playsInline.title": "Reproducir de forma intercalada (dispositivos móviles)",
+  "admin/editor.video.poster.title": "URL de la imagen miniatura",
+  "admin/editor.video.poster.description": "Imagen que se mostrará cuando el video aún no esté disponible",
+  "admin/editor.video.name.title": "Nombre",
+  "admin/editor.video.name.description": "Nombre del video para SEO y accesibilidad",
+  "admin/editor.video.description.title": "Descripción",
+  "admin/editor.video.description.description": "Descripción del video para SEO y accesibilidad",
+  "admin/editor.video.uploadDate.title": "Fecha de carga",
+  "admin/editor.video.uploadDate.description": "Fecha de carga del video para SEO en formato `aaaa-mm-dd hh:mm:ss`",
+  "admin/editor.video.fallbackImageUrl.title": "URL de la imagen de reserva",
+  "admin/editor.video.fallbackImageUrl.description": "URL de la imagen de reserva del video que se mostrará cuando el video no esté disponible"
+}
